@@ -1,254 +1,234 @@
 "use client";
-import React from "react";
 import { cn } from "@/lib/utils";
+import React from "react";
 import Marquee from "react-fast-marquee";
 import LargeHeading from "../LargeHeading";
 
-
 export function Testimonials() {
-    return (
-        <section>
-            <LargeHeading>CLIENTS</LargeHeading>
-            <div className="relative mx-auto h-full w-full max-w-7xl overflow-hidden px-4 pt-20 md:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-5xl font-bold text-white/90">Pricing</h2>
-                    <p className="text-white/60 text-lg mt-6 max-w-xl mx-auto">
-                        Flexible, transparent pricing crafted for every stage — from startup to scale-up.
-                    </p>
-                </div>
+  return (
+    <section>
+      <LargeHeading>CLIENTS</LargeHeading>
+      <div className="relative mx-auto h-full w-full max-w-7xl overflow-hidden px-4 pt-20 md:px-8">
+        <div className="mb-16 text-center">
+          <h2 className="text-5xl font-bold text-white/80">
 
-                <div className="relative">
-                    <div className="bg-charcoal h-full w-full overflow-hidden">
-                        <TestimonialsGrid />
-                    </div>
-                </div>
+            What My <span className="text-primary">Clients</span> Say</h2>
+          <p className="mx-auto mt-6 max-w-4xl text-lg text-white/60">
+            I’ve had the privilege of working with amazing clients across different industries. Here’s what they have to say about collaborating with me—delivering fast, modern, and effective websites that exceed expectations.
+          </p>
+        </div>
 
-                <div className="from-charcoal absolute inset-x-0 bottom-0 h-40 w-full bg-linear-to-t to-transparent"></div>
-            </div>
+        <div className="relative">
+          <div className="bg-charcoal h-full w-full overflow-hidden">
+            <TestimonialsGrid />
+          </div>
+        </div>
 
-
-
-        </section>
-    );
+        <div className="from-charcoal absolute inset-x-0 bottom-0 h-40 w-full bg-linear-to-t to-transparent"></div>
+      </div>
+    </section>
+  );
 }
 
 export const TestimonialsGrid = () => {
-    const first = testimonials.slice(0, 6);
-    const second = testimonials.slice(6, 12);
-    return (
-        <div className="relative mask-[linear-gradient(to_right,transparent_0%,white_10%,white_90%,transparent_100%)]">
-            <Marquee direction="right" pauseOnHover speed={50}>
-                {first.map((testimonial, index) => (
-                    <Card key={`testimonial-${testimonial.src}-${index}`}>
-                        <Quote>{testimonial.quote}</Quote>
-                        <div className="mt-8 flex items-center gap-2">
-                            <img
-                                src={testimonial.src}
-                                alt="Manu Arora"
-                                width={40}
-                                height={40}
-                                className="rounded-full"
-                            />
-                            <div className="flex flex-col">
-                                <QuoteDescription className="text-neutral-600 dark:text-neutral-300">
-                                    {testimonial.name}
-                                </QuoteDescription>
-                                <QuoteDescription className="text-neutral-400">
-                                    {testimonial.designation}
-                                </QuoteDescription>
-                            </div>
-                        </div>
-                    </Card>
-                ))}
-            </Marquee>
-            <Marquee className="mt-10" direction="right" pauseOnHover speed={70}>
-                {second.map((testimonial, index) => (
-                    <Card key={`testimonial-${testimonial.src}-${index}`}>
-                        <Quote>{testimonial.quote}</Quote>
-                        <div className="mt-8 flex items-center gap-2">
-                            <img
-                                src={testimonial.src}
-                                alt="Manu Arora"
-                                width={40}
-                                height={40}
-                                className="rounded-full"
-                            />
-                            <div className="flex flex-col">
-                                <QuoteDescription className="text-neutral-300">
-                                    {testimonial.name}
-                                </QuoteDescription>
-                                <QuoteDescription className="text-neutral-400">
-                                    {testimonial.designation}
-                                </QuoteDescription>
-                            </div>
-                        </div>
-                    </Card>
-                ))}
-            </Marquee>
-        </div>
-    );
+  const first = testimonials.slice(0, 6);
+  const second = testimonials.slice(6, 12);
+  return (
+    <div className="relative mask-[linear-gradient(to_right,transparent_0%,white_10%,white_90%,transparent_100%)]">
+      <Marquee direction="right" pauseOnHover speed={50}>
+        {first.map((testimonial, index) => (
+          <Card key={`testimonial-${index}`}>
+            <Quote>{testimonial.quote}</Quote>
+            <div className="mt-6 flex items-center gap-2">
+              <div className="flex text-yellow-400">
+                {"★".repeat(testimonial.rating)}
+                {"☆".repeat(5 - testimonial.rating)}
+              </div>
+              <div className="flex flex-col">
+                <QuoteDescription className="text-neutral-600 dark:text-neutral-300">
+                  {testimonial.name}
+                </QuoteDescription>
+                <QuoteDescription className="text-neutral-400">
+                  {testimonial.designation}
+                </QuoteDescription>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </Marquee>
+
+      <Marquee className="mt-10" direction="right" pauseOnHover speed={70}>
+        {second.map((testimonial, index) => (
+          <Card key={`testimonial-${index}`}>
+            <Quote>{testimonial.quote}</Quote>
+            <div className="mt-6 flex items-center gap-2">
+              <div className="flex text-yellow-400">
+                {"★".repeat(testimonial.rating)}
+                {"☆".repeat(5 - testimonial.rating)}
+              </div>
+              <div className="flex flex-col">
+                <QuoteDescription className="text-neutral-300">
+                  {testimonial.name}
+                </QuoteDescription>
+                <QuoteDescription className="text-neutral-400">
+                  {testimonial.designation}
+                </QuoteDescription>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </Marquee>
+    </div>
+  );
 };
+
 export const Card = ({
-    className,
-    children,
+  className,
+  children
 }: {
-    className?: string;
-    children: React.ReactNode;
+  className?: string;
+  children: React.ReactNode;
 }) => {
-    return (
-        <div
-            className={cn(
-                "group mx-4 h-full min-h-[230px] max-w-md rounded-xl bg-background p-4 shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] md:max-w-lg md:p-8 ",
-                className,
-            )}
-        >
-            {children}
-        </div>
-    );
+  return (
+    <div
+      className={cn(
+        "group bg-background mx-4 h-full min-h-[230px] max-w-md rounded-xl p-4 shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] md:max-w-lg md:p-8",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
 };
 
 export const Quote = ({
-    children,
-    className,
+  children,
+  className
 }: {
-    children: React.ReactNode;
-    className?: string;
+  children: React.ReactNode;
+  className?: string;
 }) => {
-    return (
-        <h3
-            className={cn(
-                "py-2 text-sm font-semibold text-black md:text-base dark:text-white",
-                className,
-            )}
-        >
-            {children}
-        </h3>
-    );
+  return (
+    <h3
+      className={cn(
+        "py-2 text-sm font-semibold text-black md:text-base dark:text-white",
+        className
+      )}
+    >
+      {children}
+    </h3>
+  );
 };
 
 export const QuoteDescription = ({
-    children,
-    className,
+  children,
+  className
 }: {
-    children: React.ReactNode;
-    className?: string;
+  children: React.ReactNode;
+  className?: string;
 }) => {
-    return (
-        <p
-            className={cn(
-                "max-w-sm text-xs font-normal text-neutral-600 md:text-sm dark:text-neutral-400",
-                className,
-            )}
-        >
-            {children}
-        </p>
-    );
+  return (
+    <p
+      className={cn(
+        "max-w-sm text-xs font-normal text-neutral-600 md:text-sm dark:text-neutral-400",
+        className
+      )}
+    >
+      {children}
+    </p>
+  );
 };
 
 interface Testimonial {
-    src: string;
-    quote: string;
-    name: string;
-    designation?: string;
+  quote: string;
+  name: string;
+  designation?: string;
+  rating: number;
 }
 
 export const testimonials: Testimonial[] = [
-    {
-        name: "Manu Arora",
-        quote:
-            "What a fantastic AI Proactiv AI is, I just love it. It has completely transformed the way I approach problems and develop solutions.",
-        src: "https://i.pravatar.cc/150?img=1",
-        designation: "Tech Innovator & Entrepreneur",
-    },
-    {
-        name: "Tyler Durden",
-        quote:
-            "I made a soap with the help of AI, it was so easy to use. I'm so glad this happened because it revolutionized my entire business model and production process.",
-        src: "https://i.pravatar.cc/150?img=2",
-        designation: "Creative Director & Business Owner",
-    },
-    {
-        name: "Alice Johnson",
-        quote:
-            "This AI has transformed the way I work! It's like having a brilliant assistant who knows exactly what I need before I even ask.",
-        src: "https://i.pravatar.cc/150?img=3",
-        designation: "Senior Software Engineer",
-    },
-    {
-        name: "Bob Smith",
-        quote:
-            "Absolutely revolutionary, a game-changer for our industry. It has streamlined our processes and enhanced our productivity dramatically.",
-        src: "https://i.pravatar.cc/150?img=4",
-        designation: "Industry Analyst",
-    },
-    {
-        name: "Cathy Lee",
-        quote:
-            "I can't imagine going back to how things were before this AI. It has not only improved my work efficiency but also my daily life.",
-        src: "https://i.pravatar.cc/150?img=5",
-        designation: "Product Manager",
-    },
-    {
-        name: "David Wright",
-        quote:
-            "It's like having a superpower! This AI tool has given us the ability to do things we never thought were possible in our field.",
-        src: "https://i.pravatar.cc/150?img=6",
-        designation: "Research Scientist",
-    },
-    {
-        name: "Eva Green",
-        quote:
-            "The efficiency it brings is unmatched. It's a vital tool that has helped us cut costs and improve our end product significantly.",
-        src: "https://i.pravatar.cc/150?img=7",
-        designation: "Operations Director",
-    },
-    {
-        name: "Frank Moore",
-        quote:
-            "A robust solution that fits perfectly into our workflow. It has enhanced our team's capabilities and allowed us to tackle more complex projects.",
-        src: "https://i.pravatar.cc/150?img=8",
-        designation: "Project Manager",
-    },
-    {
-        name: "Grace Hall",
-        quote:
-            "It's incredibly intuitive and easy to use. Even those without technical expertise can leverage its power to improve their workflows.",
-        src: "https://i.pravatar.cc/150?img=9",
-        designation: "Marketing Specialist",
-    },
-    {
-        name: "Henry Ford",
-        quote:
-            "It has saved us countless hours. Highly recommended for anyone looking to enhance their efficiency and productivity.",
-        src: "https://i.pravatar.cc/150?img=10",
-        designation: "Operations Analyst",
-    },
-    {
-        name: "Ivy Wilson",
-        quote:
-            "A must-have tool for any professional. It's revolutionized the way we approach problem-solving and decision-making.",
-        src: "https://i.pravatar.cc/150?img=11",
-        designation: "Business Consultant",
-    },
-    {
-        name: "Jack Brown",
-        quote:
-            "The results are always impressive. This AI has helped us to not only meet but exceed our performance targets.",
-        src: "https://i.pravatar.cc/150?img=12",
-        designation: "Performance Manager",
-    },
-    {
-        name: "Kathy Adams",
-        quote:
-            "It helps us achieve what was once thought impossible. The AI's capabilities are groundbreaking and have opened new avenues for us.",
-        src: "https://i.pravatar.cc/150?img=13",
-        designation: "Innovation Lead",
-    },
-    {
-        name: "Leo Carter",
-        quote:
-            "Transformative technology with real impact. It has streamlined our operations and brought unprecedented efficiency to our processes.",
-        src: "https://i.pravatar.cc/150?img=14",
-        designation: "Technology Strategist",
-    },
+  {
+    name: "Manu Arora",
+    quote:
+      "What a fantastic AI Proactiv AI is, I just love it. It has completely transformed the way I approach problems and develop solutions.",
+    designation: "Tech Innovator & Entrepreneur",
+    rating: 5
+  },
+  {
+    name: "Tyler Durden",
+    quote:
+      "I made a soap with the help of AI, it was so easy to use. It revolutionized my entire business model and production process.",
+    designation: "Creative Director & Business Owner",
+    rating: 4
+  },
+  {
+    name: "Alice Johnson",
+    quote:
+      "This AI has transformed the way I work! It's like having a brilliant assistant who knows exactly what I need.",
+    designation: "Senior Software Engineer",
+    rating: 5
+  },
+  {
+    name: "Bob Smith",
+    quote:
+      "Absolutely revolutionary and a game-changer for our industry. Productivity has skyrocketed.",
+    designation: "Industry Analyst",
+    rating: 5
+  },
+  {
+    name: "Cathy Lee",
+    quote:
+      "I can't imagine going back to how things were before this AI. It improved both work and daily life.",
+    designation: "Product Manager",
+    rating: 4
+  },
+  {
+    name: "David Wright",
+    quote:
+      "It's like having a superpower! This tool enables things we once thought impossible.",
+    designation: "Research Scientist",
+    rating: 5
+  },
+  {
+    name: "Eva Green",
+    quote:
+      "The efficiency it brings is unmatched. A vital tool for improving our end product.",
+    designation: "Operations Director",
+    rating: 4
+  },
+  {
+    name: "Frank Moore",
+    quote:
+      "A robust solution that fits perfectly into our workflow. Enhances team capabilities greatly.",
+    designation: "Project Manager",
+    rating: 5
+  },
+  {
+    name: "Grace Hall",
+    quote:
+      "Incredibly intuitive. Even non-technical team members benefit from it.",
+    designation: "Marketing Specialist",
+    rating: 4
+  },
+  {
+    name: "Henry Ford",
+    quote:
+      "Saved us countless hours. Highly recommended for efficiency boosts.",
+    designation: "Operations Analyst",
+    rating: 5
+  },
+  {
+    name: "Ivy Wilson",
+    quote:
+      "A must-have for any modern professional. It has changed the way we solve problems.",
+    designation: "Business Consultant",
+    rating: 5
+  },
+  {
+    name: "Jack Brown",
+    quote:
+      "The results are always impressive. Helps us meet and exceed performance targets.",
+    designation: "Performance Manager",
+    rating: 4
+  }
 ];

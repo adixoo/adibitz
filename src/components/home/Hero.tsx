@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 import { Code2, Sparkles } from "lucide-react";
 import Link from "next/link";
-import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import AnimatedButton from "../ui/animated-button";
+import { HoverBorderGradient } from "../ui/hover-border-gradient";
 
 const Hero = () => {
   return (
@@ -40,7 +40,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-white mb-6 text-5xl leading-tight font-bold md:text-6xl lg:text-7xl"
+            className="mb-6 text-5xl leading-tight font-bold text-white md:text-6xl lg:text-7xl"
           >
             Aditya K.
           </motion.h1>
@@ -63,7 +63,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-white/50 mx-auto mb-12 max-w-2xl text-lg md:text-xl"
+            className="mx-auto mb-12 max-w-2xl text-lg text-white/50 md:text-xl"
           >
             I build modern, fast, and scalable websites & applications that help
             businesses thrive online. From concept to deployment, delivering
@@ -76,12 +76,8 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-
-
             <Link href="/form">
-              <AnimatedButton>
-                Start a Project
-              </AnimatedButton>
+              <AnimatedButton>Start a Project</AnimatedButton>
             </Link>
           </motion.div>
         </div>

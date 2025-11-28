@@ -4,17 +4,23 @@ import LargeHeading from "../LargeHeading";
 const services = [
   {
     title: "Web Development",
-    icon: <Laptop className="mb-6 size-20 text-white/60 group-hover:text-primary" />,
+    icon: (
+      <Laptop className="group-hover:text-primary mb-6 size-20 text-white/60" />
+    ),
     highlight: false
   },
   {
     title: "UI/UX Design",
-    icon: <Palette className="mb-6 size-20 text-white/60 group-hover:text-primary" />,
+    icon: (
+      <Palette className="group-hover:text-primary mb-6 size-20 text-white/60" />
+    ),
     highlight: true
   },
   {
     title: "SEO & Digital Growth",
-    icon: <Megaphone className="mb-6 size-20 text-white/60 group-hover:text-primary" />,
+    icon: (
+      <Megaphone className="group-hover:text-primary mb-6 size-20 text-white/60" />
+    ),
     highlight: false
   }
 ];
@@ -31,14 +37,14 @@ const Services = () => {
               High-Quality
               <br />
               Digital Services{" "}
-              <span className="text-purple-600 font-bold">Built for You.</span>
+              <span className="font-bold text-purple-600">Built for You.</span>
             </h2>
           </div>
 
           <p className="text-sm leading-relaxed text-white/60 md:text-lg">
             I help businesses grow with clean, fast, and modern digital
-            solutions — from high-performance websites to engaging interfaces and
-            SEO strategies that boost visibility and drive real results.
+            solutions — from high-performance websites to engaging interfaces
+            and SEO strategies that boost visibility and drive real results.
           </p>
         </div>
 
@@ -46,11 +52,9 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`group  flex flex-col items-center justify-center rounded-3xl py-30 p-10 transition shadow-sm 
-      outline-2  outline-white/20
-      hover:outline-primary hover:outline-4 hover:shadow-md`}
+              className={`group hover:outline-primary flex flex-col items-center justify-center rounded-3xl p-10 py-30 shadow-sm outline-2 outline-white/20 transition hover:shadow-md hover:outline-4`}
             >
-              <span className="transition-colors group-hover:text-primary">
+              <span className="group-hover:text-primary transition-colors">
                 {service.icon}
               </span>
 
@@ -60,8 +64,6 @@ const Services = () => {
             </div>
           ))}
         </div>
-
-
       </div>
     </section>
   );

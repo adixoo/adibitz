@@ -1,10 +1,15 @@
 import { Marquee } from "../ui/marquee";
 
 const Ribbon = () => {
-  const items = ["WEB DEVELOPMENT", "UI/UX DESIGN", "SEO OPTIMIZATION", "CLOUD SERVICES"];
+  const items = [
+    "WEB DEVELOPMENT",
+    "UI/UX DESIGN",
+    "SEO OPTIMIZATION",
+    "CLOUD SERVICES"
+  ];
 
   return (
-    <div className="bg-primary flex w-full items-center justify-center  py-4">
+    <div className="bg-primary my-10 flex w-full items-center justify-center py-4">
       <Marquee className="[--duration:20s]">
         {items.map((item, index) => (
           <div key={index} className="flex items-center gap-12">
@@ -13,7 +18,6 @@ const Ribbon = () => {
           </div>
         ))}
       </Marquee>
-
     </div>
   );
 };
