@@ -76,7 +76,7 @@ const pricingTiers = [
       "Clean, reusable component structure",
       "Dark mode toggle"
     ],
-    color: "from-violet-500 to-purple-600"
+    color: "from-violet-500 to-primary"
   }
 ];
 

@@ -34,9 +34,9 @@ const About = () => {
         <div className="md:col-span-3">
           <h2 className="text-5xl leading-snug font-bold text-white/80">
             Building modern, high-performance{" "}
-            <span className="text-purple-600">digital solutions</span> for
+            <span className="text-primary">digital solutions</span> for
             brands across{" "}
-            <span className="text-purple-600">India & beyond.</span>
+            <span className="text-primary">India & beyond.</span>
           </h2>
 
           <p className="mt-5 text-lg leading-relaxed text-white/60">
