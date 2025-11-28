@@ -16,12 +16,12 @@ export default function Home() {
       <Services />
       <Ribbon />
       <About />
-      {/* <Whyme />
-      <Projects />
+      <Whyme />
+      {/* <Projects /> */}
       <Pricing />
       <Testimonials />
       <FAQ />
-      <CTA /> */}
+      <CTA />
     </>
   );
 }
