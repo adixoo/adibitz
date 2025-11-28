@@ -14,9 +14,9 @@ export default function Home() {
     <>
       <Hero />
       <Services />
-      {/* <Ribbon />
+      <Ribbon />
       <About />
-      <Whyme />
+      {/* <Whyme />
       <Projects />
       <Pricing />
       <Testimonials />

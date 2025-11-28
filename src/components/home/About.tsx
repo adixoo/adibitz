@@ -1,3 +1,4 @@
+
 const stats = [
   {
     value: "14",
@@ -18,7 +19,8 @@ const stats = [
 
 const About = () => {
   return (
-    <section className="w-full px-6 py-20 md:px-20">
+    <section className="px-4">
+      <div className="w-full py-20 md:px-20">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-5">
         <div className="flex flex-col items-center md:col-span-2">
           <div className="bg-primary flex h-40 w-40 items-center justify-center rounded-full md:h-48 md:w-48">
@@ -63,6 +65,7 @@ const About = () => {
           ))}
         </div>
       </div>
+    </div>
     </section>
   );
 };
