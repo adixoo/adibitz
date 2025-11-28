@@ -56,7 +56,7 @@ export function Footer() {
 
       <div className="mx-auto max-w-7xl items-start justify-between text-sm text-neutral-500 md:px-8">
         <div className="relative flex w-full flex-col items-center justify-center">
-          <div className="mr-0 mb-8 md:mr-4 md:flex">
+          <div className="mr-0 mb-8 md:flex">
             <Logo />
           </div>
 
