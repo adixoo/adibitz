@@ -13,12 +13,11 @@ const Hero = () => {
           className="absolute inset-0 z-0"
           style={{
             background:
-              "radial-gradient(125% 125% at 50% 100%, #000000 40%, var(--primary) 100%)"
+              "radial-gradient(125% 125% at 50% 100%, transparent 40%, var(--primary) 100%)"
           }}
         />
-        {/* Your Content/Components */}
       </div>
-      <div className="container mx-auto px-4 py-20">
+      <div className="container mx-auto px-4 py-20 ">
         <div className="mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

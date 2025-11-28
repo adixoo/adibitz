@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Stack_Sans_Notch } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
+import { Footer } from "@/components/Footer";
 
 const stackSans = Stack_Sans_Notch({
   weight: ["400", "500", "600", "700"],
@@ -75,6 +76,7 @@ export default function RootLayout({
           </div>
 
           {children}
+          <Footer/>
         </ReactLenis>
         <NextTopLoader
           showSpinner={false}

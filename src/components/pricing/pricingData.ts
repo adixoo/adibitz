@@ -1,0 +1,137 @@
+export const indianPricing = {
+  starter: {
+    name: "Starter Website",
+    price: "1,000 – 2,000",
+    currency: "₹",
+    features: [
+      "Single home page",
+      "Static content (no backend)",
+      "Basic mobile responsiveness",
+      "Minimal animations",
+      "Simple navbar + footer",
+      "Basic color styling",
+      "Placeholder images",
+      "WhatsApp / Email contact button",
+      "Fast, lightweight UI",
+      "Basic SEO (title + meta description)",
+    ],
+  },
+
+  standard: {
+    name: "Standard Website",
+    price: "2,000 – 3,000",
+    currency: "₹",
+    featured: true,
+    features: [
+      "2 to 4 pages",
+      "Better page layouts",
+      "Improved responsiveness",
+      "Fade/slide animations",
+      "Contact form (formsubmit.io / non-functional)",
+      "Google Maps embed",
+    ],
+    additionalFeatures: ["Everything in Starter Website"],
+  },
+
+  advanced: {
+    name: "Advanced Website",
+    price: "3,000 – 4,000",
+    currency: "₹",
+    features: [
+      "Light Framer Motion animations",
+      "Fully responsive",
+      "Improved typography & spacing",
+      "Icons + micro-interactions",
+      "Back-to-top button",
+      "Optional dark/light mode",
+    ],
+    additionalFeatures: ["Everything in Standard Website"],
+  },
+
+  premium: {
+    name: "Premium Website",
+    price: "4,000 – 5,000",
+    currency: "₹",
+    features: [
+      "Full landing page",
+      "Advanced Framer Motion animations",
+      "Premium hero section",
+      "Modern UI components",
+      "Fully working contact form",
+      "SEO-friendly structure",
+      "OG + Twitter tags",
+      "Reusable component structure",
+      "Dark mode toggle",
+    ],
+    additionalFeatures: ["Everything in Advanced Website"],
+  },
+};
+export const foreignPricing = {
+  starter: {
+    name: "Starter Website",
+    price: "50 – 80",
+    currency: "$",
+    features: [
+      "One-page layout (Home)",
+      "Static content",
+      "Mobile-friendly design",
+      "Basic light animations",
+      "Header & Footer",
+      "Basic color palette",
+      "Fast-loading UI",
+      "Social / WhatsApp / Email buttons",
+      "Basic SEO (title + meta description)",
+    ],
+  },
+
+  standard: {
+    name: "Standard Website",
+    price: "80 – 120",
+    currency: "$",
+    featured: true,
+    features: [
+      "2–4 pages website",
+      "Improved page structure",
+      "Fully responsive",
+      "Fade/slide animations",
+      "Contact form (FormSubmit)",
+      "Google Maps embed",
+      "Better spacing & structure",
+    ],
+    additionalFeatures: ["Everything in Starter Website"],
+  },
+
+  advanced: {
+    name: "Advanced Website",
+    price: "120 – 160",
+    currency: "$",
+    features: [
+      "Refined responsive design",
+      "Light Framer Motion animations",
+      "Improved typography",
+      "Icons + micro-interactions",
+      "Back-to-top button",
+      "Optional dark mode",
+      "Consistent design system",
+    ],
+    additionalFeatures: ["Everything in Standard Website"],
+  },
+
+  premium: {
+    name: "Premium Website",
+    price: "160 – 200",
+    currency: "$",
+    features: [
+      "High-quality landing page",
+      "Advanced Framer Motion animations",
+      "Premium hero section",
+      "Modern UI components",
+      "Interactive micro-UX",
+      "Fully functional contact form",
+      "SEO-ready (OG + Twitter Cards)",
+      "Scalable component structure",
+      "Light/Dark mode toggle",
+    ],
+    additionalFeatures: ["Everything in Advanced Website"],
+  },
+};
