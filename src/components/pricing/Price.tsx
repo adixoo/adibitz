@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Check, Sparkles, Zap, Rocket, Star } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
+import { Check, Rocket, Sparkles, Star, Zap } from "lucide-react";
 
 const pricingTiers = [
   {
@@ -22,9 +22,9 @@ const pricingTiers = [
       "Placeholder images",
       "WhatsApp / Email contact button",
       "Fast, lightweight UI",
-      "Basic SEO (title + meta description)",
+      "Basic SEO (title + meta description)"
     ],
-    color: "from-slate-500 to-slate-600",
+    color: "from-slate-500 to-slate-600"
   },
   {
     title: "Standard Website",
@@ -38,9 +38,9 @@ const pricingTiers = [
       "Improved responsiveness",
       "Smooth basic animations (fade/slide)",
       "Contact form (formsubmit.io)",
-      "Google Maps embed",
+      "Google Maps embed"
     ],
-    color: "from-teal-500 to-teal-600",
+    color: "from-teal-500 to-teal-600"
   },
   {
     title: "Advanced Website",
@@ -55,9 +55,9 @@ const pricingTiers = [
       "Improved typography & spacing",
       "Icons + micro-interactions",
       "Back-to-top button",
-      "Optional light/dark mode",
+      "Optional light/dark mode"
     ],
-    color: "from-accent to-cyan-600",
+    color: "from-accent to-cyan-600"
   },
   {
     title: "Premium Website",
@@ -74,10 +74,10 @@ const pricingTiers = [
       "Fully working contact form",
       "On-page SEO tags (OG + Twitter Cards)",
       "Clean, reusable component structure",
-      "Dark mode toggle",
+      "Dark mode toggle"
     ],
-    color: "from-violet-500 to-purple-600",
-  },
+    color: "from-violet-500 to-purple-600"
+  }
 ];
 
 const containerVariants = {
@@ -85,36 +85,36 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-    },
-  },
+      staggerChildren: 0.1
+    }
+  }
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
-    y: 0,
-  },
+    y: 0
+  }
 };
 
 const Pricing = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background min-h-screen">
       <div className="container mx-auto px-4 py-12 md:py-20">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="mb-12 text-center"
         >
           <Badge variant="secondary" className="mb-4 text-sm font-medium">
             Simple & Transparent Pricing
           </Badge>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-primary">
+          <h1 className="text-primary mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">
             Choose Your Perfect Plan
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-muted-foreground mx-auto max-w-3xl text-lg md:text-xl">
             Clear, feature-based pricing for small business and personal
             websites. Every tier builds on the previous one with enhanced
             features.
@@ -125,7 +125,7 @@ const Pricing = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12"
+          className="mx-auto mb-12 grid max-w-7xl gap-6 md:grid-cols-2 lg:grid-cols-4"
         >
           {pricingTiers.map((tier, index) => {
             const IconComponent = tier.icon;
@@ -136,14 +136,14 @@ const Pricing = () => {
                 transition={{ duration: 0.5 }}
               >
                 <Card
-                  className={`relative h-full p-6 card-shadow hover:card-shadow-hover transition-smooth group ${
+                  className={`card-shadow hover:card-shadow-hover transition-smooth group relative h-full p-6 ${
                     tier.popular
-                      ? "border-2 border-accent ring-2 ring-accent/20"
+                      ? "border-accent ring-accent/20 border-2 ring-2"
                       : ""
                   }`}
                 >
                   {tier.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+                    <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2">
                       <Badge className="bg-accent text-accent-foreground px-3 py-1 text-xs font-semibold shadow-lg">
                         Most Popular
                       </Badge>
@@ -152,14 +152,14 @@ const Pricing = () => {
 
                   <div className="mb-6">
                     <div
-                      className={`w-12 h-12 rounded-lg bg-linear-to-br ${tier.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}
+                      className={`h-12 w-12 rounded-lg bg-linear-to-br ${tier.color} mb-4 flex items-center justify-center transition-transform group-hover:scale-110`}
                     >
-                      <IconComponent className="w-6 h-6 text-white" />
+                      <IconComponent className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold mb-2 text-primary">
+                    <h3 className="text-primary mb-2 text-xl font-bold">
                       {tier.title}
                     </h3>
-                    <div className="text-2xl md:text-3xl font-bold text-accent mb-2">
+                    <div className="text-accent mb-2 text-2xl font-bold md:text-3xl">
                       {tier.price}
                     </div>
                     <p className="text-muted-foreground text-sm">
@@ -167,18 +167,18 @@ const Pricing = () => {
                     </p>
                   </div>
 
-                  <ul className="space-y-3 mb-6 min-h-[280px]">
+                  <ul className="mb-6 min-h-[280px] space-y-3">
                     {tier.features.map((feature, i) => (
                       <li
                         key={i}
                         className={`flex items-start gap-2 text-sm ${
                           feature.startsWith("Everything in")
-                            ? "font-semibold text-foreground pt-2 border-t border-border"
+                            ? "text-foreground border-border border-t pt-2 font-semibold"
                             : ""
                         }`}
                       >
                         <Check
-                          className={`w-4 h-4 mt-0.5 shrink-0 ${
+                          className={`mt-0.5 h-4 w-4 shrink-0 ${
                             tier.popular ? "text-accent" : "text-primary"
                           }`}
                         />
@@ -189,7 +189,7 @@ const Pricing = () => {
 
                   <Button
                     variant={tier.popular ? "default" : "outline"}
-                    className="w-full transition-smooth"
+                    className="transition-smooth w-full"
                   >
                     Get Started
                   </Button>
@@ -204,35 +204,35 @@ const Pricing = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="max-w-4xl mx-auto"
+          className="mx-auto max-w-4xl"
         >
-          <Card className="p-8 card-shadow text-center">
-            <h3 className="text-2xl font-bold mb-4 text-primary">
+          <Card className="card-shadow p-8 text-center">
+            <h3 className="text-primary mb-4 text-2xl font-bold">
               Need Extra Pages?
             </h3>
             <p className="text-muted-foreground mb-6">
               Add more pages to any tier for just{" "}
-              <span className="text-accent font-bold text-xl">₹500/page</span>
+              <span className="text-accent text-xl font-bold">₹500/page</span>
             </p>
-            <div className="grid md:grid-cols-3 gap-4 text-sm">
-              <div className="p-4 bg-muted rounded-lg">
-                <div className="font-semibold text-foreground mb-2">
+            <div className="grid gap-4 text-sm md:grid-cols-3">
+              <div className="bg-muted rounded-lg p-4">
+                <div className="text-foreground mb-2 font-semibold">
                   About Page
                 </div>
                 <p className="text-muted-foreground text-xs">
                   Company story & team info
                 </p>
               </div>
-              <div className="p-4 bg-muted rounded-lg">
-                <div className="font-semibold text-foreground mb-2">
+              <div className="bg-muted rounded-lg p-4">
+                <div className="text-foreground mb-2 font-semibold">
                   Services Page
                 </div>
                 <p className="text-muted-foreground text-xs">
                   Detailed service offerings
                 </p>
               </div>
-              <div className="p-4 bg-muted rounded-lg">
-                <div className="font-semibold text-foreground mb-2">
+              <div className="bg-muted rounded-lg p-4">
+                <div className="text-foreground mb-2 font-semibold">
                   Gallery/Portfolio
                 </div>
                 <p className="text-muted-foreground text-xs">
@@ -248,14 +248,14 @@ const Pricing = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mt-12"
+          className="mt-12 text-center"
         >
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mx-auto mb-6 max-w-2xl">
             Not sure which plan is right for you? Let&apos;s discuss your
             project requirements and I&apos;ll help you choose the perfect
             solution.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Button size="lg">Start Your Project</Button>
             <Button variant="outline" size="lg">
               Back to Home

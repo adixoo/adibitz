@@ -1,0 +1,70 @@
+import { Laptop, Megaphone, Palette } from "lucide-react";
+import LargeHeading from "../LargeHeading";
+
+const services = [
+  {
+    title: "Web Development",
+    icon: <Laptop className="mb-6 size-20 text-white/60 group-hover:text-primary" />,
+    highlight: false
+  },
+  {
+    title: "UI/UX Design",
+    icon: <Palette className="mb-6 size-20 text-white/60 group-hover:text-primary" />,
+    highlight: true
+  },
+  {
+    title: "SEO & Digital Growth",
+    icon: <Megaphone className="mb-6 size-20 text-white/60 group-hover:text-primary" />,
+    highlight: false
+  }
+];
+
+const Services = () => {
+  return (
+    <section>
+      <LargeHeading>SERVICES</LargeHeading>
+
+      <div className="mx-auto w-full max-w-7xl py-20">
+        <div className="grid items-start gap-20 md:grid-cols-2">
+          <div>
+            <h2 className="text-4xl leading-tight font-normal text-white/80 md:text-5xl">
+              High-Quality
+              <br />
+              Digital Services{" "}
+              <span className="text-purple-600 font-bold">Built for You.</span>
+            </h2>
+          </div>
+
+          <p className="text-sm leading-relaxed text-white/60 md:text-lg">
+            I help businesses grow with clean, fast, and modern digital
+            solutions — from high-performance websites to engaging interfaces and
+            SEO strategies that boost visibility and drive real results.
+          </p>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-3">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className={`group  flex flex-col items-center justify-center rounded-3xl py-30 p-10 transition shadow-sm 
+      outline-2  outline-white/20
+      hover:outline-primary hover:outline-4 hover:shadow-md`}
+            >
+              <span className="transition-colors group-hover:text-primary">
+                {service.icon}
+              </span>
+
+              <h3 className="text-center text-lg font-medium text-white/70">
+                {service.title}
+              </h3>
+            </div>
+          ))}
+        </div>
+
+
+      </div>
+    </section>
+  );
+};
+
+export default Services;

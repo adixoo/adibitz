@@ -1,3 +1,3 @@
 export enum Constant {
-  FormLink = "/form",
+  FormLink = "/form"
 }
