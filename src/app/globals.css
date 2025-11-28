@@ -697,10 +697,11 @@
 }
 
 .stroke-text {
-  -webkit-text-stroke: 1px var(--primary);
+     -webkit-text-stroke: 1px var(--primary);
+    -webkit-text-fill-color: transparent;
   /* text-shadow:
-    3px 3px 2px var(--color-primary),
-    -3px 3px 2px var(--color-primary),
-    -3px -3px 0 var(--color-primary),
-    3px -3px 0 var(--color-primary); */
+   -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff; */
 }
