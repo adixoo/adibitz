@@ -27,13 +27,14 @@ const services = [
 
 const Services = () => {
   return (
-    <section>
+    <section >
       <LargeHeading>SERVICES</LargeHeading>
 
-      <div className="mx-auto w-full max-w-7xl py-20">
-        <div className="grid items-start gap-20 md:grid-cols-2">
+      <div className="px-4">
+        <div className="mx-auto w-full max-w-7xl py-20">
+        <div className="grid items-start gap-6 lg:gap-20 md:grid-cols-2">
           <div>
-            <h2 className="text-4xl leading-tight font-normal text-white/80 md:text-5xl">
+            <h2 className=" leading-tight font-normal text-white/80 text-5xl">
               High-Quality
               <br />
               Digital Services{" "}
@@ -41,7 +42,7 @@ const Services = () => {
             </h2>
           </div>
 
-          <p className="text-sm leading-relaxed text-white/60 md:text-lg">
+          <p className=" leading-relaxed text-white/60 md:text-lg">
             I help businesses grow with clean, fast, and modern digital
             solutions — from high-performance websites to engaging interfaces
             and SEO strategies that boost visibility and drive real results.
@@ -58,12 +59,13 @@ const Services = () => {
                 {service.icon}
               </span>
 
-              <h3 className="text-center text-lg font-medium text-white/70">
+              <h3 className="text-center text-xl font-medium text-white/70">
                 {service.title}
               </h3>
             </div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ export default function LargeHeading<T extends React.ElementType = "h1">({
   return (
     <Component
       {...props}
-      className="stroke-text font-sans text-[12rem] font-bold text-transparent"
+      className="stroke-text font-sans text-[8rem] sm:text-[10rem] md:text-[11rem] lg:text-[12rem] font-bold text-transparent overflow-hidden w-full"
     >
       {children}
     </Component>
