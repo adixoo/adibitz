@@ -38,7 +38,7 @@ const Services = () => {
               High-Quality
               <br />
               Digital Services{" "}
-              <span className="font-bold text-purple-600">Built for You.</span>
+              <span className="font-bold text-primary">Built for You.</span>
             </h2>
           </div>
 
