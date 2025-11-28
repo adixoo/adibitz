@@ -56,7 +56,7 @@ export function Footer() {
 
       <div className="mx-auto max-w-7xl items-start justify-between text-sm text-neutral-500 md:px-8">
         <div className="relative flex w-full flex-col items-center justify-center">
-          <div className="mr-0 mb-8 md:flex">
+          <div className=" mb-8 md:flex">
             <Logo />
           </div>
 
@@ -141,7 +141,6 @@ const Logo = () => {
   return (
     <Link
       href="/"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <Image
         src="/logo.png"
@@ -150,7 +149,7 @@ const Logo = () => {
         height={512}
         className="h-10 sm:h-16 w-auto"
       />
-      <span className="font-medium text-black dark:text-white sr-only">Adibitz</span>
+      <span className="sr-only">Adibitz</span>
     </Link>
   );
 };
