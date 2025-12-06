@@ -113,7 +113,7 @@ export default function Pricing() {
     <section className="w-full py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="mb-16 text-center">
-          <h2 className="text-5xl font-bold text-white/90">Pricing</h2>
+          <h2 className="text-5xl text-white/90">Pricing</h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-white/60">
             Flexible, transparent pricing crafted for every stage — from startup
             to scale-up.

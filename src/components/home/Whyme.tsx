@@ -17,8 +17,8 @@ const Whyme = () => {
   return (
     <section className="w-full px-6 py-20 text-center md:px-20">
       {/* Heading */}
-      <h2 className="text-5xl font-bold text-white/80">
-        Why clients <span className="text-primary">choose me?</span>
+      <h2 className="text-5xl text-white/80">
+        Why clients <span className="text-primary font-bold">choose me?</span>
       </h2>
 
       {/* Subtext */}

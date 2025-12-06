@@ -31,10 +31,11 @@ const About = () => {
           </div>
 
           <div className="md:col-span-3">
-            <h2 className="text-5xl leading-snug font-bold text-white/80">
+            <h2 className="text-5xl leading-snug text-white/80">
               Building modern, high-performance{" "}
-              <span className="text-primary">digital solutions</span> for brands
-              across <span className="text-primary">India & beyond.</span>
+              <span className="text-primary font-bold">digital solutions</span>{" "}
+              for brands across{" "}
+              <span className="text-primary font-bold">India & beyond.</span>
             </h2>
 
             <p className="mt-5 text-lg leading-relaxed text-white/60">
@@ -44,8 +45,8 @@ const About = () => {
               results that last.
             </p>
           </div>
-        </div>
-
+        </div>{" "}
+        font-bold
         <div className="mt-20 rounded-xl px-6 py-16 text-white">
           <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-3">
             {stats.map((item, index) => (

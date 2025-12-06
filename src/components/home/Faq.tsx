@@ -42,8 +42,9 @@ export function FAQ() {
   return (
     <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 py-20 md:grid-cols-2 md:px-8 md:py-40">
       <div>
-        <h2 className="text-center text-4xl font-bold tracking-tight text-white/80 md:text-left md:text-5xl">
-          Frequently Asked <span className="text-primary">Questions</span>
+        <h2 className="text-center text-4xl font-normal tracking-tight text-white/80 md:text-left md:text-5xl">
+          Frequently Asked{" "}
+          <span className="text-primary font-bold">Questions</span>
         </h2>
         <p className="mt-4 text-center text-neutral-400 md:text-left">
           Here are the most common questions clients ask before working with me.
