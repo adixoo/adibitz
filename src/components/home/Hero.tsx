@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Code2, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import Link from "next/link";
 import AnimatedButton from "../ui/animated-button";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
@@ -30,7 +30,7 @@ const Hero = () => {
               as="button"
               className="bg-background flex items-center gap-2 text-white"
             >
-              <Sparkles className="text-accent h-4 w-4" />
+              <Sparkles className="text-primary h-4 w-4" />
               Available for new projects
             </HoverBorderGradient>
           </motion.div>
@@ -44,7 +44,7 @@ const Hero = () => {
             Build Better Websites. Grow Faster.
           </motion.h1>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -56,7 +56,7 @@ const Hero = () => {
               <span className="text-muted-foreground">•</span>
               Web & App Developer
             </h2>
-          </motion.div>
+          </motion.div> */}
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
