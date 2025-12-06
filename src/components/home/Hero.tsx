@@ -17,7 +17,7 @@ const Hero = () => {
           }}
         />
       </div>
-      <div className="container mx-auto px-4 py-20 ">
+      <div className="container mx-auto px-4 py-20">
         <div className="mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-6 text-5xl leading-tight font-bold text-white md:text-6xl lg:text-7xl"
           >
-            Aditya K.
+            Build Better Websites. Grow Faster.
           </motion.h1>
 
           <motion.div
@@ -64,9 +64,9 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mb-12 max-w-2xl text-lg text-white/50 md:text-xl"
           >
-            I build modern, fast, and scalable websites & applications that help
-            businesses thrive online. From concept to deployment, delivering
-            quality solutions tailored to your needs.
+            I design, develop, and maintain modern, high-performance websites
+            that help businesses look professional and convert more customers
+            online.
           </motion.p>
 
           <motion.div
@@ -76,7 +76,7 @@ const Hero = () => {
             className="flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <Link href="/form">
-              <AnimatedButton>Start a Project</AnimatedButton>
+              <AnimatedButton>Start Your Project</AnimatedButton>
             </Link>
           </motion.div>
         </div>

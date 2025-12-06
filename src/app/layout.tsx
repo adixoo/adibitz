@@ -1,15 +1,17 @@
+import { Footer } from "@/components/Footer";
 import ReactLenis from "lenis/react";
 import type { Metadata } from "next";
 import { Stack_Sans_Notch } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
-import { Footer } from "@/components/Footer";
 
 const stackSans = Stack_Sans_Notch({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap"
 });
+
+import { Toaster } from "sonner";
 
 const ApplicationUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${
@@ -62,7 +64,7 @@ export default function RootLayout({
             <div
               className="absolute inset-0 z-0"
               style={{
-                background: "#000000",
+                background: "var(--background)",
                 backgroundImage: `
         radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.2) 1px, transparent 0),
         radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.18) 1px, transparent 0),
@@ -76,7 +78,7 @@ export default function RootLayout({
           </div>
 
           {children}
-          <Footer/>
+          <Footer />
         </ReactLenis>
         <NextTopLoader
           showSpinner={false}
@@ -84,6 +86,7 @@ export default function RootLayout({
           zIndex={999}
           height={3}
         />
+        <Toaster position="top-center" richColors closeButton />
       </body>
     </html>
   );

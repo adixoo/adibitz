@@ -3,7 +3,6 @@ import { CTA } from "@/components/home/Cta";
 import { FAQ } from "@/components/home/Faq";
 import Hero from "@/components/home/Hero";
 import Pricing from "@/components/home/Pricing";
-import Projects from "@/components/home/Projects";
 import Ribbon from "@/components/home/Ribbon";
 import Services from "@/components/home/Services";
 import { Testimonials } from "@/components/home/Testimonial";

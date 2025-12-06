@@ -4,7 +4,7 @@ import {
   IconBrandGithub,
   IconBrandInstagram,
   IconBrandLinkedin,
-  IconBrandTwitter,
+  IconBrandTwitter
 } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,53 +14,53 @@ export function Footer() {
   const pages = [
     {
       title: "Products",
-      href: "#",
+      href: "#"
     },
     {
       title: "Studio",
-      href: "#",
+      href: "#"
     },
     {
       title: "Clients",
-      href: "#",
+      href: "#"
     },
     {
       title: "Pricing",
-      href: "#",
+      href: "#"
     },
     {
       title: "Blog",
-      href: "#",
+      href: "#"
     },
     {
       title: "Privacy",
-      href: "#",
+      href: "#"
     },
     {
       title: "Terms",
-      href: "#",
-    },
+      href: "#"
+    }
   ];
 
   return (
-    <div className="relative w-full overflow-hidden   px-8 py-20  ">
-
-<div className="h-full w-full absolute inset-0 -z-10 opacity-25">
-  <div
-    className="absolute inset-0 z-0"
-    style={{
-      background: "radial-gradient(125% 125% at 50% 10%, transparent 40%, var(--primary) 100%)",
-    }}
-  />
-</div>
+    <div className="relative w-full overflow-hidden px-8 py-20">
+      <div className="absolute inset-0 -z-10 h-full w-full opacity-25">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            background:
+              "radial-gradient(125% 125% at 50% 10%, transparent 40%, var(--primary) 100%)"
+          }}
+        />
+      </div>
 
       <div className="mx-auto max-w-7xl items-start justify-between text-sm text-neutral-500 md:px-8">
         <div className="relative flex w-full flex-col items-center justify-center">
-          <div className=" mb-8 md:flex">
+          <div className="mb-8 md:flex">
             <Logo />
           </div>
 
-          <ul className="hover:text-text-neutral-800 flex list-none flex-col gap-4 text-neutral-600 transition-colors sm:flex-row items-center dark:text-neutral-300">
+          <ul className="hover:text-text-neutral-800 flex list-none flex-col items-center gap-4 text-neutral-600 transition-colors sm:flex-row dark:text-neutral-300">
             {pages.map((page, idx) => (
               <li key={"pages" + idx} className="list-none">
                 <Link
@@ -104,7 +104,7 @@ export function Footer() {
 
 const GridLineHorizontal = ({
   className,
-  offset,
+  offset
 }: {
   className?: string;
   offset?: string;
@@ -120,7 +120,7 @@ const GridLineHorizontal = ({
           "--fade-stop": "90%",
           "--offset": offset || "200px", //-100px if you want to keep the line inside
           "--color-dark": "rgba(255, 255, 255, 0.2)",
-          maskComposite: "exclude",
+          maskComposite: "exclude"
         } as React.CSSProperties
       }
       className={cn(
@@ -131,7 +131,7 @@ const GridLineHorizontal = ({
         "mask-exclude",
         "z-30",
         "dark:bg-[linear-gradient(to_right,var(--color-dark),var(--color-dark)_50%,transparent_0,transparent)]",
-        className,
+        className
       )}
     ></div>
   );
@@ -139,15 +139,13 @@ const GridLineHorizontal = ({
 
 const Logo = () => {
   return (
-    <Link
-      href="/"
-    >
+    <Link href="/">
       <Image
         src="/logo.png"
         alt="Adibitz logo"
         width={512}
         height={512}
-        className="h-10 sm:h-16 w-auto"
+        className="h-10 w-auto sm:h-16"
       />
       <span className="sr-only">Adibitz</span>
     </Link>

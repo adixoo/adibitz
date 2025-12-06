@@ -11,10 +11,13 @@ export function Testimonials() {
       <div className="relative mx-auto h-full w-full max-w-7xl overflow-hidden px-4 pt-20 md:px-8">
         <div className="mb-16 text-center">
           <h2 className="text-5xl font-bold text-white/80">
-
-            What My <span className="text-primary">Clients</span> Say</h2>
+            What My <span className="text-primary">Clients</span> Say
+          </h2>
           <p className="mx-auto mt-6 max-w-4xl text-lg text-white/60">
-            I’ve had the privilege of working with amazing clients across different industries. Here’s what they have to say about collaborating with me—delivering fast, modern, and effective websites that exceed expectations.
+            I’ve had the privilege of working with amazing clients across
+            different industries. Here’s what they have to say about
+            collaborating with me—delivering fast, modern, and effective
+            websites that exceed expectations.
           </p>
         </div>
 

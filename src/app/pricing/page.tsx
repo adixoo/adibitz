@@ -1,16 +1,17 @@
 import PricingPage from "@/components/pricing/Pricing";
-import { foreignPricing, indianPricing } from "@/components/pricing/pricingData";
-import { headers } from "next/headers";
-import { Card } from "@/components/ui/card";
+import {
+  foreignPricing,
+  indianPricing
+} from "@/components/pricing/pricingData";
 import AnimatedButton from "@/components/ui/animated-button";
+import { Card } from "@/components/ui/card";
+import { headers } from "next/headers";
 
 export default async function Page() {
   const country = (await headers()).get("x-vercel-ip-country") || "UNKNOWN";
 
   const isIndian =
-    country === "IN" ||
-    country === "IND" ||
-    country.toLowerCase() === "india";
+    country === "IN" || country === "IND" || country.toLowerCase() === "india";
 
   const pricing = isIndian ? indianPricing : foreignPricing;
 
@@ -40,32 +41,38 @@ function AdditionalPagePricing({ isIndian }: { isIndian: boolean }) {
     <>
       <div className="mx-auto max-w-4xl">
         <Card className="card-shadow bg-background border-0 p-8 text-center">
-          <h3 className="text-white mb-4 text-2xl font-bold">
+          <h3 className="mb-4 text-2xl font-bold text-white">
             Need Extra Pages?
           </h3>
 
-          <p className="text-white/60 mb-6">
+          <p className="mb-6 text-white/60">
             Add more pages to any tier for{" "}
             <span className="text-primary text-xl font-bold">{priceText}</span>
           </p>
 
           <div className="grid gap-4 text-sm md:grid-cols-3">
             <div className="bg-muted rounded-lg p-4">
-              <div className="text-foreground mb-2 font-semibold">About Page</div>
+              <div className="text-foreground mb-2 font-semibold">
+                About Page
+              </div>
               <p className="text-muted-foreground text-xs">
                 Company story & team info
               </p>
             </div>
 
             <div className="bg-muted rounded-lg p-4">
-              <div className="text-foreground mb-2 font-semibold">Services Page</div>
+              <div className="text-foreground mb-2 font-semibold">
+                Services Page
+              </div>
               <p className="text-muted-foreground text-xs">
                 Detailed service offerings
               </p>
             </div>
 
             <div className="bg-muted rounded-lg p-4">
-              <div className="text-foreground mb-2 font-semibold">Gallery/Portfolio</div>
+              <div className="text-foreground mb-2 font-semibold">
+                Gallery/Portfolio
+              </div>
               <p className="text-muted-foreground text-xs">
                 Showcase your work
               </p>
@@ -74,14 +81,14 @@ function AdditionalPagePricing({ isIndian }: { isIndian: boolean }) {
         </Card>
       </div>
 
-      <div className="mt-12 text-center mb-14">
-        <p className="text-white/60 mx-auto mb-6 max-w-2xl">
+      <div className="mt-12 mb-14 text-center">
+        <p className="mx-auto mb-6 max-w-2xl text-white/60">
           Not sure which plan is right for you? Let&apos;s discuss your project
           requirements and I&apos;ll help you choose the perfect solution.
         </p>
 
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
-          <AnimatedButton >Let&apos;s discuss Your Project</AnimatedButton>
+          <AnimatedButton>Let&apos;s discuss Your Project</AnimatedButton>
         </div>
       </div>
     </>

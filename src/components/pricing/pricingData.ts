@@ -13,8 +13,8 @@ export const indianPricing = {
       "Placeholder images",
       "WhatsApp / Email contact button",
       "Fast, lightweight UI",
-      "Basic SEO (title + meta description)",
-    ],
+      "Basic SEO (title + meta description)"
+    ]
   },
 
   standard: {
@@ -28,9 +28,9 @@ export const indianPricing = {
       "Improved responsiveness",
       "Fade/slide animations",
       "Contact form (formsubmit.io / non-functional)",
-      "Google Maps embed",
+      "Google Maps embed"
     ],
-    additionalFeatures: ["Everything in Starter Website"],
+    additionalFeatures: ["Everything in Starter Website"]
   },
 
   advanced: {
@@ -43,9 +43,9 @@ export const indianPricing = {
       "Improved typography & spacing",
       "Icons + micro-interactions",
       "Back-to-top button",
-      "Optional dark/light mode",
+      "Optional dark/light mode"
     ],
-    additionalFeatures: ["Everything in Standard Website"],
+    additionalFeatures: ["Everything in Standard Website"]
   },
 
   premium: {
@@ -61,10 +61,10 @@ export const indianPricing = {
       "SEO-friendly structure",
       "OG + Twitter tags",
       "Reusable component structure",
-      "Dark mode toggle",
+      "Dark mode toggle"
     ],
-    additionalFeatures: ["Everything in Advanced Website"],
-  },
+    additionalFeatures: ["Everything in Advanced Website"]
+  }
 };
 export const foreignPricing = {
   starter: {
@@ -80,8 +80,8 @@ export const foreignPricing = {
       "Basic color palette",
       "Fast-loading UI",
       "Social / WhatsApp / Email buttons",
-      "Basic SEO (title + meta description)",
-    ],
+      "Basic SEO (title + meta description)"
+    ]
   },
 
   standard: {
@@ -96,9 +96,9 @@ export const foreignPricing = {
       "Fade/slide animations",
       "Contact form (FormSubmit)",
       "Google Maps embed",
-      "Better spacing & structure",
+      "Better spacing & structure"
     ],
-    additionalFeatures: ["Everything in Starter Website"],
+    additionalFeatures: ["Everything in Starter Website"]
   },
 
   advanced: {
@@ -112,9 +112,9 @@ export const foreignPricing = {
       "Icons + micro-interactions",
       "Back-to-top button",
       "Optional dark mode",
-      "Consistent design system",
+      "Consistent design system"
     ],
-    additionalFeatures: ["Everything in Standard Website"],
+    additionalFeatures: ["Everything in Standard Website"]
   },
 
   premium: {
@@ -130,8 +130,8 @@ export const foreignPricing = {
       "Fully functional contact form",
       "SEO-ready (OG + Twitter Cards)",
       "Scalable component structure",
-      "Light/Dark mode toggle",
+      "Light/Dark mode toggle"
     ],
-    additionalFeatures: ["Everything in Advanced Website"],
-  },
+    additionalFeatures: ["Everything in Advanced Website"]
+  }
 };

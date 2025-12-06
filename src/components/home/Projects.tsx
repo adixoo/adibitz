@@ -9,7 +9,7 @@ const services = [
   },
   {
     title: "UI/UX Design",
-    icon: <Palette className="mb-6 h-10 w-10 text-primary" />,
+    icon: <Palette className="text-primary mb-6 h-10 w-10" />,
     highlight: true
   },
   {
@@ -46,7 +46,7 @@ const Projects = () => {
               key={index}
               className={`bg-background flex flex-col items-center justify-center rounded-3xl p-10 transition ${
                 service.highlight
-                  ? "border-2 border-primary shadow-md"
+                  ? "border-primary border-2 shadow-md"
                   : "border shadow-sm hover:shadow-md"
               }`}
             >
