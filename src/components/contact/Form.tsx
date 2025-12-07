@@ -38,21 +38,17 @@ import {
   Check,
   ChevronsUpDown,
   Globe,
-  Linkedin,
   Mail,
+  MessageCircle,
   Phone,
   Send
 } from "lucide-react";
-import { toast } from "sonner";
 
 import { country as countries } from "@/constants/countries";
+import { toast } from "sonner";
 
 import { contactMe } from "@/app/[actions]/contact";
 import { ContactSchema, type ContactFormValues } from "@/types/contact.schema";
-
-// ---------------- Schema ----------------
-
-// ---------------- Component ----------------
 
 export function ContactForm() {
   const [countryOpen, setCountryOpen] = useState(false);
@@ -62,8 +58,8 @@ export function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
-      phone: "",
-      linkedin: "",
+      whatsapp: "",
+      instantProfile: "",
       country: "",
       subject: "",
       message: ""
@@ -88,7 +84,6 @@ export function ContactForm() {
         form.reset();
         toast.success(response.message || "Message sent!");
       } else {
-        // Handle validation errors from server
         if (response.errors) {
           Object.entries(response.errors).forEach(([field, messages]) => {
             form.setError(field as keyof ContactFormValues, {
@@ -98,7 +93,6 @@ export function ContactForm() {
           });
         }
 
-        // Handle generic server errors
         if (response.message && !response.errors) {
           toast.error(response.message);
         }
@@ -111,9 +105,6 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8">
       <FieldSet>
-        {/* <FieldLabel>Contact</FieldLabel> */}
-        {/* <FieldDescription>Fill out the form to get in touch.</FieldDescription> */}
-
         <FieldGroup className="flex flex-col gap-6">
           {/* Name */}
           <Field data-invalid={!!errors.name}>
@@ -132,7 +123,8 @@ export function ContactForm() {
           {/* Country */}
           <Field data-invalid={!!errors.country}>
             <FieldLabel>
-              <Globe className="h-4 w-4" /> Country
+              <Globe className="h-4 w-4" /> Country{" "}
+              <span className="text-destructive">*</span>
             </FieldLabel>
 
             <Popover open={countryOpen} onOpenChange={setCountryOpen}>
@@ -215,32 +207,31 @@ export function ContactForm() {
                 <FieldError>{errors.email?.message}</FieldError>
               </Field>
 
-              {/* Phone */}
-              <Field data-invalid={!!errors.phone}>
+              {/* WhatsApp */}
+              <Field data-invalid={!!errors.whatsapp}>
                 <FieldLabel>
-                  {" "}
-                  <Phone className="h-4 w-4" /> Phone
+                  <Phone className="h-4 w-4" /> WhatsApp Number
                 </FieldLabel>
                 <Input
                   placeholder={selectedCountry?.code || "+1"}
-                  aria-invalid={!!errors.phone}
-                  {...register("phone")}
+                  aria-invalid={!!errors.whatsapp}
+                  {...register("whatsapp")}
                 />
-                <FieldError>{errors.phone?.message}</FieldError>
+                <FieldError>{errors.whatsapp?.message}</FieldError>
               </Field>
             </FieldGroup>
 
-            {/* LinkedIn */}
-            <Field data-invalid={!!errors.linkedin}>
+            {/* Instant Messaging Profile */}
+            <Field data-invalid={!!errors.instantProfile}>
               <FieldLabel>
-                <Linkedin className="h-4 w-4" /> LinkedIn
+                <MessageCircle className="h-4 w-4" /> Instant Messaging Profile
               </FieldLabel>
               <Input
-                placeholder="linkedin.com/in/username"
-                aria-invalid={!!errors.linkedin}
-                {...register("linkedin")}
+                placeholder="Telegram / Instagram / WhatsApp profile link"
+                aria-invalid={!!errors.instantProfile}
+                {...register("instantProfile")}
               />
-              <FieldError>{errors.linkedin?.message}</FieldError>
+              <FieldError>{errors.instantProfile?.message}</FieldError>
             </Field>
           </FieldSet>
 

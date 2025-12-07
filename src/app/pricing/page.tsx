@@ -1,3 +1,5 @@
+"use client";
+
 import PricingPage from "@/components/pricing/Pricing";
 import {
   foreignPricing,
@@ -5,13 +7,27 @@ import {
 } from "@/components/pricing/pricingData";
 import AnimatedButton from "@/components/ui/animated-button";
 import { Card } from "@/components/ui/card";
-import { headers } from "next/headers";
+import { useEffect, useState } from "react";
 
-export default async function Page() {
-  const country = (await headers()).get("x-vercel-ip-country") || "UNKNOWN";
+export default function Page() {
+  const [isIndian, setIsIndian] = useState(false); // default → US
 
-  const isIndian =
-    country === "IN" || country === "IND" || country.toLowerCase() === "india";
+  useEffect(() => {
+    async function fetchCountry() {
+      try {
+        const res = await fetch("https://ipwho.is/");
+        const data = await res.json();
+
+        if (data.country_code === "IN") {
+          setIsIndian(true);
+        }
+      } catch (err) {
+        // fail silently — keep US pricing
+      }
+    }
+
+    fetchCountry();
+  }, []);
 
   const pricing = isIndian ? indianPricing : foreignPricing;
 

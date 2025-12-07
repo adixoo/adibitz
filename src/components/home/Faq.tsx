@@ -33,7 +33,7 @@ const FAQs = [
   {
     question: "How do payments work?",
     answer:
-      "I usually take a small upfront payment to begin the project, with the rest due upon completion. For larger projects, milestone-based payment options are available."
+      "I take 50% once half of the work is completed, and the remaining amount upon final delivery. For bigger projects, I also offer milestone-based payment options."
   }
 ];
 

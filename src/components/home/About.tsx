@@ -46,7 +46,6 @@ const About = () => {
             </p>
           </div>
         </div>{" "}
-        font-bold
         <div className="mt-20 rounded-xl px-6 py-16 text-white">
           <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-3">
             {stats.map((item, index) => (

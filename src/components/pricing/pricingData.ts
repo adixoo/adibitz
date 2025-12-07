@@ -1,9 +1,10 @@
 export const indianPricing = {
   starter: {
     name: "Starter Website",
-    price: "1,000 – 2,000",
+    price: "1,000 – 1,500",
     currency: "₹",
     features: [
+      "1 to 2 pages",
       "Single home page",
       "Static content (no backend)",
       "Basic mobile responsiveness",
@@ -13,7 +14,8 @@ export const indianPricing = {
       "Placeholder images",
       "WhatsApp / Email contact button",
       "Fast, lightweight UI",
-      "Basic SEO (title + meta description)"
+      "Basic SEO (title + meta description)",
+      "Basic on page SEO"
     ]
   },
 
@@ -21,13 +23,12 @@ export const indianPricing = {
     name: "Standard Website",
     price: "2,000 – 3,000",
     currency: "₹",
-    featured: true,
     features: [
-      "2 to 4 pages",
+      "3 to 4 pages",
       "Better page layouts",
       "Improved responsiveness",
       "Fade/slide animations",
-      "Contact form (formsubmit.io / non-functional)",
+      "Contact form (non-functional)",
       "Google Maps embed"
     ],
     additionalFeatures: ["Everything in Starter Website"]
@@ -37,13 +38,15 @@ export const indianPricing = {
     name: "Advanced Website",
     price: "3,000 – 4,000",
     currency: "₹",
+    featured: true,
     features: [
-      "Light Framer Motion animations",
+      "Framer Motion animations",
       "Fully responsive",
       "Improved typography & spacing",
       "Icons + micro-interactions",
       "Back-to-top button",
-      "Optional dark/light mode"
+      "Optional dark/light mode",
+      "Fully working contact form"
     ],
     additionalFeatures: ["Everything in Standard Website"]
   },
@@ -53,9 +56,9 @@ export const indianPricing = {
     price: "4,000 – 5,000",
     currency: "₹",
     features: [
+      "5 pages max",
       "Full landing page",
       "Advanced Framer Motion animations",
-      "Premium hero section",
       "Modern UI components",
       "Fully working contact form",
       "SEO-friendly structure",

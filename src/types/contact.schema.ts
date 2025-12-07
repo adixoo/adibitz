@@ -3,11 +3,8 @@ import { z } from "zod";
 // Allow unicode letters + space . ' -
 const nameRegex = /^[\p{L} .'-]+$/u;
 
-// Phone: allow + only at start, rest digits, min 5 total chars
-const phoneRegex = /^\+?\d{5,}$/;
-
-// LinkedIn: strict hostname check
-const linkedinRegex = /^https?:\/\/([\w.-]+\.)?linkedin\.com(\/.*)?$/i;
+// WhatsApp: + allowed only at start, rest digits, min 5 chars
+const whatsappRegex = /^\+?\d{5,}$/;
 
 export const ContactSchema = z
   .object({
@@ -20,22 +17,21 @@ export const ContactSchema = z
 
     email: z.string().email("Invalid email").optional(),
 
-    phone: z
+    whatsapp: z
       .string()
-      .regex(phoneRegex, "Phone must contain only numbers and be valid")
+      .regex(whatsappRegex, "WhatsApp number must be valid")
       .optional(),
 
-    linkedin: z
-      .string()
-      .url("Invalid URL")
-      .regex(linkedinRegex, "Enter a valid LinkedIn profile URL")
-      .optional(),
+    // Any URL where you can message (Telegram, Instagram, WhatsApp link, etc.)
+    instantProfile: z.string().url("Invalid URL").optional(),
 
     subject: z.string().optional(),
 
     message: z.string().min(1, "Message is required")
   })
-  .refine((data) => data.email || data.phone || data.linkedin, {
+
+  // Require at least one contact method
+  .refine((data) => data.email || data.whatsapp || data.instantProfile, {
     message: "Provide at least one contact method",
     path: ["email"]
   });
