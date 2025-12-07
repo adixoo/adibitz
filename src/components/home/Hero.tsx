@@ -1,11 +1,35 @@
 "use client";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import {
+  Github,
+  Instagram,
+  Linkedin,
+  Mail,
+  Sparkles,
+  Twitter
+} from "lucide-react";
 import Link from "next/link";
 import AnimatedButton from "../ui/animated-button";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 
 const Hero = () => {
+  // Social links configuration
+  const socialLinks = [
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/aditya-kumar-b77703385/",
+      label: "LinkedIn"
+    },
+    { icon: Github, href: "https://github.com/adixoo", label: "GitHub" },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/aditya.anand.dev/",
+      label: "Instagram"
+    },
+    { icon: Twitter, href: "https://x.com/aadi_ku", label: "X" },
+    { icon: Mail, href: "mailto:aadi.aanand89@gmail.com", label: "Email" }
+  ];
+
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <div className="absolute inset-0 -z-10 h-full w-full opacity-30">
@@ -44,20 +68,6 @@ const Hero = () => {
             Build Better Websites. Grow Faster.
           </motion.h1>
 
-          {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8"
-          >
-            <h2 className="text-foreground mb-4 flex flex-wrap items-center justify-center gap-3 text-2xl font-medium md:text-3xl lg:text-4xl">
-              <Code2 className="text-accent h-8 w-8" />
-              Software Engineer
-              <span className="text-muted-foreground">•</span>
-              Web & App Developer
-            </h2>
-          </motion.div> */}
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,9 +85,42 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <Link href="/form">
+            <Link href="/contact">
               <AnimatedButton>Start Your Project</AnimatedButton>
             </Link>
+          </motion.div>
+
+          {/* Social Icons Section */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mt-12 flex items-center justify-center gap-6"
+          >
+            {socialLinks.map((social, index) => (
+              <motion.a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.6 + index * 0.1 // Stagger effect
+                }}
+                whileHover={{
+                  scale: 1.2,
+                  y: -5,
+                  color: "white" // Brighten on hover
+                }}
+                whileTap={{ scale: 0.9 }}
+                className="text-white/50 transition-colors hover:text-white"
+              >
+                <social.icon className="h-6 w-6" />
+              </motion.a>
+            ))}
           </motion.div>
         </div>
       </div>

@@ -13,32 +13,12 @@ import React from "react";
 export function Footer() {
   const pages = [
     {
-      title: "Products",
-      href: "#"
-    },
-    {
-      title: "Studio",
-      href: "#"
-    },
-    {
-      title: "Clients",
-      href: "#"
-    },
-    {
-      title: "Pricing",
-      href: "#"
-    },
-    {
-      title: "Blog",
-      href: "#"
-    },
-    {
-      title: "Privacy",
-      href: "#"
+      title: "Contact",
+      href: "/contact"
     },
     {
       title: "Terms",
-      href: "#"
+      href: "/terms"
     }
   ];
 
@@ -65,7 +45,7 @@ export function Footer() {
               <li key={"pages" + idx} className="list-none">
                 <Link
                   className="hover:text-text-neutral-800 transition-colors"
-                  href="/products"
+                  href={page.href}
                 >
                   {page.title}
                 </Link>
