@@ -2,7 +2,7 @@ import { ContactForm } from "@/components/contact/Form";
 
 export default function Home() {
   return (
-    <main className="bg-background min-h-screen">
+    <main className="min-h-screen">
       <div className="mx-auto max-w-2xl px-6 py-16 md:py-24">
         <header className="mb-12">
           <p className="text-muted-foreground mb-2 text-sm">Contact</p>
