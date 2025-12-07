@@ -3,7 +3,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 
 import {
   Field,
@@ -48,28 +47,10 @@ import { toast } from "sonner";
 
 import { country as countries } from "@/constants/countries";
 
+import { contactMe } from "@/app/[actions]/contact";
+import { ContactSchema, type ContactFormValues } from "@/types/contact.schema";
+
 // ---------------- Schema ----------------
-
-export const ContactSchema = z
-  .object({
-    name: z.string().min(1, "Name is required"),
-
-    country: z.string().optional(),
-
-    email: z.string().email("Invalid email").optional(),
-    phone: z.string().min(5, "Phone number is too short").optional(),
-    linkedin: z.string().optional(),
-
-    subject: z.string().optional(),
-
-    message: z.string().min(1, "Message is required")
-  })
-  .refine((data) => data.email || data.phone || data.linkedin, {
-    message: "Provide at least one contact method",
-    path: ["email"]
-  });
-
-export type ContactFormValues = z.infer<typeof ContactSchema>;
 
 // ---------------- Component ----------------
 
@@ -101,11 +82,28 @@ export function ContactForm() {
 
   const onSubmit = async (data: ContactFormValues) => {
     try {
-      // Simulate API
-      await new Promise((r) => setTimeout(r, 1500));
+      const response = await contactMe(data);
 
-      toast.success("Message sent!");
-    } catch {
+      if (response.success) {
+        form.reset();
+        toast.success(response.message || "Message sent!");
+      } else {
+        // Handle validation errors from server
+        if (response.errors) {
+          Object.entries(response.errors).forEach(([field, messages]) => {
+            form.setError(field as keyof ContactFormValues, {
+              type: "server",
+              message: messages?.join(", ")
+            });
+          });
+        }
+
+        // Handle generic server errors
+        if (response.message && !response.errors) {
+          toast.error(response.message);
+        }
+      }
+    } catch (e) {
       toast.error("Something went wrong.");
     }
   };
@@ -274,7 +272,7 @@ export function ContactForm() {
         </FieldGroup>
       </FieldSet>
 
-      <Button type="submit" disabled={isSubmitting}>
+      <Button type="submit" disabled={isSubmitting} className="w-full">
         {isSubmitting ? (
           "Sending…"
         ) : (

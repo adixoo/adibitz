@@ -1,38 +1,43 @@
-// contact.schema.ts
 import { z } from "zod";
+
+// Allow unicode letters + space . ' -
+const nameRegex = /^[\p{L} .'-]+$/u;
+
+// Phone: allow + only at start, rest digits, min 5 total chars
+const phoneRegex = /^\+?\d{5,}$/;
+
+// LinkedIn: strict hostname check
+const linkedinRegex = /^https?:\/\/([\w.-]+\.)?linkedin\.com(\/.*)?$/i;
 
 export const ContactSchema = z
   .object({
-    name: z.string().min(1, "Name is required"),
+    name: z
+      .string()
+      .min(1, "Name is required")
+      .regex(nameRegex, "Name contains invalid characters"),
 
-    country: z.string().optional(),
+    country: z.string().min(1, "Country is required"),
 
     email: z.string().email("Invalid email").optional(),
 
-    phone: z.string().min(5, "Phone number is too short").optional(),
+    phone: z
+      .string()
+      .regex(phoneRegex, "Phone must contain only numbers and be valid")
+      .optional(),
 
     linkedin: z
       .string()
-      .optional()
-      .refine((value) => {
-        if (!value) return true;
-        try {
-          new URL(value);
-          return true;
-        } catch {
-          return false;
-        }
-      }, "Invalid URL"),
+      .url("Invalid URL")
+      .regex(linkedinRegex, "Enter a valid LinkedIn profile URL")
+      .optional(),
 
     subject: z.string().optional(),
 
     message: z.string().min(1, "Message is required")
   })
-
-  // At least one contact method must be provided
   .refine((data) => data.email || data.phone || data.linkedin, {
-    path: ["email"], // error appears under email field
-    message: "Please provide at least one contact method"
+    message: "Provide at least one contact method",
+    path: ["email"]
   });
 
-export type ContactSchemaType = z.infer<typeof ContactSchema>;
+export type ContactFormValues = z.infer<typeof ContactSchema>;

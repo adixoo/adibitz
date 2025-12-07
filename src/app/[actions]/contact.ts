@@ -1,35 +1,11 @@
 "use server";
 
+import { countries } from "@/constants/countries";
+import { ContactSchema, type ContactFormValues } from "@/types/contact.schema";
+import dayjs from "dayjs";
 import { Resend } from "resend";
-import { z } from "zod";
 
 const resend = new Resend(process.env.RESEND_CODE!);
-
-// ZOD SCHEMA
-const ContactFormSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  country: z.string().min(1, "Country is required"),
-  email: z.string().email("Invalid email"),
-  phone: z.string().min(5, "Phone number is required"),
-
-  // Validate ONLY that it is a proper URL
-  linkedinProfile: z
-    .string()
-    .refine((value) => {
-      try {
-        new URL(value);
-        return true;
-      } catch {
-        return false;
-      }
-    }, "Invalid URL")
-    .optional(),
-
-  subject: z.string().min(1, "Subject is required"),
-  message: z.string().min(1, "Message is required")
-});
-
-export type ContactFormProps = z.infer<typeof ContactFormSchema>;
 
 interface ContactResponse {
   success: boolean;
@@ -39,10 +15,10 @@ interface ContactResponse {
 }
 
 export async function contactMe(
-  data: ContactFormProps
+  data: ContactFormValues
 ): Promise<ContactResponse> {
   // VALIDATE INPUT
-  const parsed = ContactFormSchema.safeParse(data);
+  const parsed = ContactSchema.safeParse(data);
 
   if (!parsed.success) {
     return {
@@ -53,26 +29,47 @@ export async function contactMe(
 
   const payload = parsed.data;
 
+  // Convert country code to name if available
+  const countryName = payload.country
+    ? (countries[payload.country as keyof typeof countries]?.name ??
+      payload.country)
+    : "-";
+
+  // Generate "from" email dynamically
+  const fromEmail = `${payload.name.toLowerCase().replace(/\s+/g, "-")}@resend.dev`;
+
+  // Get current time
+  const currentTime = dayjs().format("D MMM YYYY, h:mm A");
+
   try {
     // SEND EMAIL
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: fromEmail,
       to: "aadi.aanand89@gmail.com",
-      subject: payload.subject,
+      subject: payload.subject ?? "No Subject",
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${payload.name}</p>
-        <p><strong>Country:</strong> ${payload.country}</p>
-        <p><strong>Email:</strong> ${payload.email}</p>
-        <p><strong>Phone:</strong> ${payload.phone}</p>
+    <body style="font-family: Arial, sans-serif; background-color: #f4f4f7; margin: 0; padding: 0;">
+      <div style="max-width: 600px; margin: 20px auto; background: #ffffff; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <h2 style="color: #333333; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">New Contact Form Submission</h2>
+        <p style="margin: 5px 0;"><strong>Time:</strong> ${currentTime}</p>
+        <p style="margin: 5px 0;"><strong>Subject:</strong> ${payload.subject ?? "No Subject"}</p>
+        <p style="margin: 5px 0;"><strong>Name:</strong> ${payload.name}</p>
+        <p style="margin: 5px 0;"><strong>Country:</strong> ${countryName}</p>
+        <p style="margin: 5px 0;"><strong>Email:</strong> ${payload.email ?? "-"}</p>
+        <p style="margin: 5px 0;"><strong>Phone:</strong> ${payload.phone ?? "-"}</p>
         ${
-          payload.linkedinProfile
-            ? `<p><strong>Profile URL:</strong> ${payload.linkedinProfile}</p>`
+          payload.linkedin
+            ? `<p style="margin: 5px 0;"><strong>Profile URL:</strong> <a href="${payload.linkedin}" style="color: #1a73e8; text-decoration: none;">${payload.linkedin}</a></p>`
             : ""
         }
-        <p><strong>Message:</strong></p>
-        <p>${payload.message}</p>
-      `
+        <div style="margin-top: 15px;">
+          <p style="margin: 5px 0; font-weight: bold;">Message:</p>
+          <p style="margin: 5px 0; line-height: 1.5; color: #555555;">${payload.message}</p>
+        </div>
+        <p style="margin-top: 20px; font-size: 12px; color: #999999;">This email was sent via Resend API.</p>
+      </div>
+    </body>
+  `
     });
 
     return {

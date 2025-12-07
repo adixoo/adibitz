@@ -5,11 +5,14 @@ export default function Home() {
     <main className="min-h-screen">
       <div className="mx-auto max-w-2xl px-6 py-16 md:py-24">
         <header className="mb-12">
-          <p className="text-muted-foreground mb-2 text-sm">Contact</p>
-          <h1 className="text-foreground text-3xl font-medium tracking-tight text-balance md:text-4xl">
+          {/* <h1 className="text-foreground text-3xl font-medium tracking-tight text-balance md:text-4xl text-center">
             Let&apos;s work together
-          </h1>
-          <p className="text-muted-foreground mt-4 max-w-lg leading-relaxed">
+          </h1> */}
+          <h2 className="text-center text-5xl leading-snug text-white/80">
+            Let&apos;s{" "}
+            <span className="text-primary font-bold">work together</span>
+          </h2>
+          <p className="text-muted-foreground mx-auto mt-4 max-w-lg text-center leading-relaxed">
             Have a project in mind or just want to say hi? Fill out the form
             below and I&apos;ll get back to you as soon as possible.
           </p>
