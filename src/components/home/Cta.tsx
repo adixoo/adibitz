@@ -1,76 +1,53 @@
-"use client";
-import { ArrowRight } from "lucide-react";
+import { HoverBackground } from "@/components/ui/hover-background";
+import { Sparkles } from "lucide-react"; // Optional: if you have lucide-react, adds a nice icon
+import Link from "next/link";
+import AnimatedButton from "../ui/animated-button";
 
 export function CTA() {
   return (
-    <section className="relative z-20 mx-auto grid w-full max-w-7xl grid-cols-1 justify-start overflow-hidden bg-linear-to-br from-slate-800 to-gray-900 sm:rounded-2xl md:my-40 md:grid-cols-2 dark:from-neutral-900">
-      {/* <div className="absolute -top-px right-10 z-30 h-px w-1/2 bg-linear-to-r from-transparent via-purple-500 to-transparent md:right-60"></div>
-            <div className="absolute -top-px right-10 z-30 h-px w-1/2 bg-linear-to-r from-transparent via-indigo-500 to-transparent md:right-40"></div>
-            <div className="absolute -top-px right-10 z-30 h-px w-1/2 bg-linear-to-r from-transparent via-sky-500 to-transparent md:right-80"></div>
-            <div
-                className="bg-noise absolute inset-0 h-full w-full mask-[radial-gradient(#fff,transparent,75%)] opacity-10"
-                style={{
-                    backgroundImage: "url(/noise.webp)",
-                    backgroundSize: "30%",
-                }}
-            ></div> */}
-      <div className="bg-background absolute inset-0 -z-10 h-full w-full text-white">
-        {/* Concentric Squares - Dark Pattern */}
-        <div
-          className="pointer-events-none absolute inset-0 z-0"
-          style={{
-            backgroundImage: `
-        repeating-linear-gradient(0deg, transparent, transparent 5px, rgba(99, 102, 241, 0.15) 5px, rgba(99, 102, 241, 0.15) 6px, transparent 6px, transparent 15px),
-        repeating-linear-gradient(90deg, transparent, transparent 5px, rgba(99, 102, 241, 0.15) 5px, rgba(99, 102, 241, 0.15) 6px, transparent 6px, transparent 15px),
-        repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(139, 92, 246, 0.12) 10px, rgba(139, 92, 246, 0.12) 11px, transparent 11px, transparent 30px),
-        repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(139, 92, 246, 0.12) 10px, rgba(139, 92, 246, 0.12) 11px, transparent 11px, transparent 30px)
-      `
-          }}
-        />
-        {/* Your Content/Components */}
-      </div>
-      <div className="relative overflow-hidden px-6 sm:rounded-2xl md:px-8">
-        <div
-          className="pointer-events-none absolute inset-y-0 right-0 overflow-hidden rounded-2xl select-none"
-          style={{
-            mask: "radial-gradient(33.875rem 33.875rem at calc(100% - 8.9375rem) 0, white 3%, transparent 70%)"
-          }}
-        ></div>
+    <section className="px-4 py-12 md:py-20">
+      <div className="mx-auto w-full max-w-6xl overflow-hidden rounded-3xl shadow-2xl">
+        <HoverBackground className="group relative">
+          {/* Optional: Subtle ambient glow behind text to ensure readability against hover effects */}
+          <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-transparent via-black/20 to-black/40" />
 
-        <div className="relative px-0 py-10 sm:px-10 sm:pt-20 sm:pb-10 lg:px-10">
-          <h2 className="text-left text-2xl font-semibold tracking-[-0.015em] text-balance text-white md:text-3xl lg:text-5xl">
-            Ready to try out the product?
-          </h2>
-          <p className="mt-8 max-w-104 text-left text-base/6 text-neutral-200">
-            Get instant access to our state of the art project and join the
-            waitlist.
-          </p>
+          <div className="relative z-10 flex flex-col items-center justify-center px-6 py-24 md:py-32">
+            {/* 1. Top Badge - Creates context before the big ask */}
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-white/60 backdrop-blur-sm">
+              <Sparkles className="h-4 w-4 text-yellow-200" />
+              <span>Accepting new projects</span>
+            </div>
 
-          <button className="group mt-8 flex items-center space-x-2 rounded-lg bg-gradient-to-b from-blue-500 to-blue-700 px-4 py-2 text-base text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]">
-            <span>Join Waitlist</span>
-            <ArrowRight className="mt-0.5 h-3 w-3 stroke-[1px] text-white transition-transform duration-200 group-hover:translate-x-1" />
-          </button>
-        </div>
+            {/* 2. Main Heading - Tight tracking, responsive sizing */}
+            <h2 className="max-w-4xl text-center text-4xl leading-[1.1] font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+              Ready to Build <br className="hidden md:block" />
+              <span className="bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent">
+                Something Great?
+              </span>
+            </h2>
+
+            {/* 3. Subtext - Better contrast and reading width */}
+            <p className="mt-6 max-w-2xl text-center text-lg leading-relaxed text-white/60 md:text-xl">
+              Your website is the first impression of your brand — make it
+              count. Let’s turn your idea into a fast, modern, and
+              high-converting digital experience.
+            </p>
+
+            {/* 4. Action Area - Spacing separation */}
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
+              <Link href="/contact" className="group/btn relative">
+                {/* Button Component preserved exactly as requested */}
+                <AnimatedButton>Start Your Project Today</AnimatedButton>
+              </Link>
+            </div>
+
+            {/* Optional: Trust signal or secondary text could go here */}
+            <p className="mt-6 text-xs tracking-widest text-white/30 uppercase">
+              Response within 24 hours
+            </p>
+          </div>
+        </HoverBackground>
       </div>
-      <div className="relative flex h-full max-h-[200px] w-full gap-4 overflow-hidden px-4 md:max-h-[400px]">
-        <img
-          src="https://assets.aceternity.com/pro/cta-1.jpg"
-          alt="cta-1"
-          width="300"
-          height="500"
-          className="mt-4 h-full rounded-lg object-cover object-top md:mt-0 md:rounded-none"
-        />
-        <img
-          src="https://assets.aceternity.com/pro/cta-2.jpg"
-          alt="cta-1"
-          width="300"
-          height="500"
-          className="mt-10 h-full rounded-lg object-cover object-top"
-        />
-      </div>
-      {/* <div className="absolute right-10 -bottom-px z-30 h-px w-1/2 bg-gradient-to-r from-transparent via-purple-500 to-transparent md:right-60"></div>
-            <div className="absolute right-10 -bottom-px z-30 h-px w-1/2 bg-gradient-to-r from-transparent via-indigo-500 to-transparent md:right-40"></div>
-            <div className="absolute right-10 -bottom-px z-30 h-px w-1/2 bg-gradient-to-r from-transparent via-sky-500 to-transparent md:right-80"></div> */}
     </section>
   );
 }

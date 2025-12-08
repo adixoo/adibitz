@@ -56,10 +56,10 @@ export async function contactMe(
         <p style="margin: 5px 0;"><strong>Name:</strong> ${payload.name}</p>
         <p style="margin: 5px 0;"><strong>Country:</strong> ${countryName}</p>
         <p style="margin: 5px 0;"><strong>Email:</strong> ${payload.email ?? "-"}</p>
-        <p style="margin: 5px 0;"><strong>Phone:</strong> ${payload.phone ?? "-"}</p>
+        <p style="margin: 5px 0;"><strong>Phone:</strong> ${payload.whatsapp ?? "-"}</p>
         ${
-          payload.linkedin
-            ? `<p style="margin: 5px 0;"><strong>Profile URL:</strong> <a href="${payload.linkedin}" style="color: #1a73e8; text-decoration: none;">${payload.linkedin}</a></p>`
+          payload.instantProfile
+            ? `<p style="margin: 5px 0;"><strong>Profile URL:</strong> <a href="${payload.instantProfile}" style="color: #1a73e8; text-decoration: none;">${payload.instantProfile}</a></p>`
             : ""
         }
         <div style="margin-top: 15px;">
