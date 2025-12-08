@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import Marquee from "react-fast-marquee";
 import LargeHeading from "../LargeHeading";
+import { Rating } from "../ui/rating";
 
 export function Testimonials() {
   return (
@@ -41,17 +42,15 @@ export const TestimonialsGrid = () => {
       <Marquee direction="right" pauseOnHover speed={50}>
         {first.map((testimonial, index) => (
           <Card key={`testimonial-${index}`}>
+            <Rating rating={testimonial.rating} />
+
             <Quote>{testimonial.quote}</Quote>
             <div className="mt-6 flex items-center gap-2">
-              <div className="flex text-yellow-400">
-                {"★".repeat(testimonial.rating)}
-                {"☆".repeat(5 - testimonial.rating)}
-              </div>
               <div className="flex flex-col">
-                <QuoteDescription className="text-neutral-600 dark:text-neutral-300">
+                <QuoteDescription className="text-neutral-300">
                   {testimonial.name}
                 </QuoteDescription>
-                <QuoteDescription className="text-neutral-400">
+                <QuoteDescription className="">
                   {testimonial.designation}
                 </QuoteDescription>
               </div>
@@ -63,17 +62,15 @@ export const TestimonialsGrid = () => {
       <Marquee className="mt-10" direction="right" pauseOnHover speed={70}>
         {second.map((testimonial, index) => (
           <Card key={`testimonial-${index}`}>
+            <Rating rating={testimonial.rating} />
+
             <Quote>{testimonial.quote}</Quote>
             <div className="mt-6 flex items-center gap-2">
-              <div className="flex text-yellow-400">
-                {"★".repeat(testimonial.rating)}
-                {"☆".repeat(5 - testimonial.rating)}
-              </div>
               <div className="flex flex-col">
                 <QuoteDescription className="text-neutral-300">
                   {testimonial.name}
                 </QuoteDescription>
-                <QuoteDescription className="text-neutral-400">
+                <QuoteDescription className="">
                   {testimonial.designation}
                 </QuoteDescription>
               </div>
@@ -112,14 +109,14 @@ export const Quote = ({
   className?: string;
 }) => {
   return (
-    <h3
+    <p
       className={cn(
-        "py-2 text-sm font-semibold text-black md:text-base dark:text-white",
+        "mt-2 py-2 font-normal tracking-wide text-white md:text-lg",
         className
       )}
     >
       {children}
-    </h3>
+    </p>
   );
 };
 
@@ -133,7 +130,7 @@ export const QuoteDescription = ({
   return (
     <p
       className={cn(
-        "max-w-sm text-xs font-normal text-neutral-600 md:text-sm dark:text-neutral-400",
+        "max-w-sm text-xs font-normal text-neutral-500 md:text-sm",
         className
       )}
     >

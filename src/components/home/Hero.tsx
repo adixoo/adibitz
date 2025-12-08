@@ -54,7 +54,7 @@ const Hero = () => {
               as="button"
               className="bg-background flex items-center gap-2 text-white"
             >
-              <Sparkles className="text-primary h-4 w-4" />
+              <Sparkles className="h-4 w-4 text-yellow-200" />
               Available for new projects
             </HoverBorderGradient>
           </motion.div>
