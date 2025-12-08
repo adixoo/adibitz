@@ -35,7 +35,7 @@ export default function Home() {
     <main className="min-h-screen">
       <div className="mx-auto max-w-2xl px-6 py-16 md:py-24">
         <header className="mb-12">
-          <h1 className="text-center text-5xl leading-snug text-white/80">
+          <h1 className="text-center text-6xl leading-snug text-white/80">
             Let&apos;s{" "}
             <span className="text-primary font-bold">work together</span>
           </h1>

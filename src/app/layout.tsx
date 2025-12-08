@@ -1,3 +1,5 @@
+// (.)(.)
+
 import { Footer } from "@/components/Footer";
 import ReactLenis from "lenis/react";
 import type { Metadata } from "next";
@@ -11,6 +13,7 @@ const stackSans = Stack_Sans_Notch({
   display: "swap"
 });
 
+import Navbar from "@/components/navbar/Navbar";
 import { Toaster } from "sonner";
 
 const ApplicationUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
@@ -79,6 +82,7 @@ export default function RootLayout({
             />
             {/* Your Content/Components */}
           </div>
+          <Navbar />
 
           {children}
           <Footer />
