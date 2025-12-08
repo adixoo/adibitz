@@ -20,33 +20,36 @@ const ApplicationUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
         : process.env.VERCEL_URL
     }`
   : "http://localhost:3000";
+
 export const metadata: Metadata = {
-  title: "Aditya — Software Engineer & Web/App Developer",
+  title: "Adibitz — Web Development, UI/UX & Digital Growth Solutions",
   description:
-    "Portfolio of Aditya, a software engineer specializing in modern web and app development using Next.js, TypeScript, and TailwindCSS.",
+    "Adibitz builds modern, fast, and conversion-focused websites for businesses. We offer web development, UI/UX design, SEO, branding, and complete digital growth solutions to help you scale online.",
+
   openGraph: {
-    title: "Hartman - Your Brand, Our Expertise",
+    title: "Adibitz — Build Faster. Look Better. Grow Online.",
     description:
-      "We help you go from idea to launch with custom formulations, smart packaging, premium ingredients, and certified manufacturing.",
+      "Get a high-performance website with clean design, strong SEO, and modern tech. Adibitz provides web development, UI/UX, branding, digital strategy, and scalable solutions for businesses.",
     url: ApplicationUrl,
-    siteName: "Hartman",
+    siteName: "Adibitz",
     images: [
       {
-        url: "/logo-full.svg", // make sure logo is in public/ folder
+        url: "/og-image.png", // Replace with your real OG image
         width: 1200,
         height: 630,
-        alt: "Hartman Logo"
+        alt: "Adibitz — Web Development & Digital Solutions"
       }
     ],
     locale: "en_US",
     type: "website"
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Hartman - Your Brand, Our Expertise",
+    title: "Adibitz — Web Development & Digital Growth",
     description:
-      "We help you go from idea to launch with custom formulations, smart packaging, premium ingredients, and certified manufacturing.",
-    images: ["/logo-full.svg"]
+      "Modern websites, UI/UX design, SEO optimization, and digital growth strategies built to make your business stand out.",
+    images: ["/og-image.png"]
   }
 };
 

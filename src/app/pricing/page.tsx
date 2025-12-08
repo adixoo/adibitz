@@ -7,6 +7,7 @@ import {
 } from "@/components/pricing/pricingData";
 import AnimatedButton from "@/components/ui/animated-button";
 import { Card } from "@/components/ui/card";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Page() {
@@ -104,7 +105,9 @@ function AdditionalPagePricing({ isIndian }: { isIndian: boolean }) {
         </p>
 
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
-          <AnimatedButton>Let&apos;s discuss Your Project</AnimatedButton>
+          <Link href={"/contact"}>
+            <AnimatedButton>Let&apos;s discuss Your Project</AnimatedButton>
+          </Link>
         </div>
       </div>
     </>

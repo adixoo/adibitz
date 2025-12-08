@@ -13,6 +13,10 @@ import React from "react";
 export function Footer() {
   const pages = [
     {
+      title: "Pricing",
+      href: "/pricing"
+    },
+    {
       title: "Contact",
       href: "/contact"
     },

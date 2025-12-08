@@ -23,7 +23,7 @@ tags:
 robots: "index, follow"
 ---
 
-# Terms & Conditions – Web Development Services
+# Terms & Conditions – Web Development Services for Adibitz
 
 **Last Updated: 24 November 2025**
 
