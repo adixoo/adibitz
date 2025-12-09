@@ -14,7 +14,7 @@ export function Testimonials() {
           <h2 className="text-5xl text-white/80">
             What My <span className="text-primary font-bold">Clients</span> Say
           </h2>
-          <p className="mx-auto mt-6 max-w-4xl text-lg text-white/60">
+          <p className="mx-auto mt-6 max-w-4xl text-white/60 md:text-lg">
             I’ve had the privilege of working with amazing clients across
             different industries. Here’s what they have to say about
             collaborating with me—delivering fast, modern, and effective
@@ -39,7 +39,7 @@ export const TestimonialsGrid = () => {
   const second = testimonials.slice(6, 12);
   return (
     <div className="relative mask-[linear-gradient(to_right,transparent_0%,white_10%,white_90%,transparent_100%)]">
-      <Marquee direction="right" pauseOnHover speed={50}>
+      <Marquee direction="left" pauseOnHover speed={50}>
         {first.map((testimonial, index) => (
           <Card key={`testimonial-${index}`}>
             <Rating rating={testimonial.rating} />
@@ -59,7 +59,7 @@ export const TestimonialsGrid = () => {
         ))}
       </Marquee>
 
-      <Marquee className="mt-10" direction="right" pauseOnHover speed={70}>
+      <Marquee className="mt-10" direction="left" pauseOnHover speed={70}>
         {second.map((testimonial, index) => (
           <Card key={`testimonial-${index}`}>
             <Rating rating={testimonial.rating} />

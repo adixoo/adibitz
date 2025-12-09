@@ -15,7 +15,9 @@ const Ribbon = () => {
       <Marquee className="[--duration:20s]">
         {items.map((item, index) => (
           <div key={index} className="flex items-center gap-12">
-            <span className="text-4xl font-semibold text-white">{item}</span>
+            <span className="text-3xl font-semibold text-white lg:text-4xl">
+              {item}
+            </span>
             <span className="text-5xl leading-none text-white">•</span>
           </div>
         ))}

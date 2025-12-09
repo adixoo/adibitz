@@ -38,7 +38,7 @@ const About = () => {
               <span className="text-primary font-bold">India & beyond.</span>
             </h2>
 
-            <p className="mt-5 text-lg leading-relaxed text-white/60">
+            <p className="mt-5 leading-relaxed text-white/60 md:text-lg">
               I help businesses grow by creating fast, scalable, and beautifully
               designed digital products. From custom websites to intuitive UI/UX
               and SEO-optimized experiences — my goal is to deliver meaningful

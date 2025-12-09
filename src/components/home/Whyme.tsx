@@ -22,7 +22,7 @@ const Whyme = () => {
       </h2>
 
       {/* Subtext */}
-      <p className="mx-auto mt-6 max-w-4xl text-lg leading-relaxed text-balance text-white/60">
+      <p className="mx-auto mt-6 max-w-4xl leading-relaxed text-white/60 md:text-lg">
         I focus on delivering clean, high-quality work with a process that’s
         simple, transparent, and built around what your business truly needs.
         Here’s what makes my services the right fit for modern brands and

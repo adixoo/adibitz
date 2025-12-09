@@ -63,7 +63,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-6 text-5xl leading-tight font-bold text-white md:text-6xl lg:text-7xl"
+            className="mb-6 bg-linear-to-b from-white to-white/60 bg-clip-text text-6xl leading-tight font-bold text-transparent lg:text-7xl"
           >
             Build Better Websites. Grow Faster.
           </motion.h1>
@@ -72,7 +72,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mx-auto mb-12 max-w-2xl text-lg text-white/50 md:text-xl"
+            className="mx-auto mb-12 max-w-2xl text-lg text-white/60 md:text-xl"
           >
             I design, develop, and maintain modern, high-performance websites
             that help businesses look professional and convert more customers

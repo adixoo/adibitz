@@ -42,11 +42,11 @@ export function FAQ() {
   return (
     <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 py-20 md:grid-cols-2 md:px-8 md:py-40">
       <div>
-        <h2 className="text-center text-4xl font-normal tracking-tight text-white/80 md:text-left md:text-5xl">
+        <h2 className="text-center text-5xl font-normal tracking-tight text-white/80 md:text-left">
           Frequently Asked{" "}
           <span className="text-primary font-bold">Questions</span>
         </h2>
-        <p className="mt-4 text-center text-neutral-400 md:text-left">
+        <p className="mt-4 text-center text-neutral-400 md:text-left md:text-lg">
           Here are the most common questions clients ask before working with me.
           Everything is transparent, simple, and designed to make your project
           experience smooth and stress-free.
@@ -87,7 +87,7 @@ const FAQItem = ({
       onClick={() => setOpen(isOpen ? null : question)}
     >
       <div className="flex items-start">
-        <div className="relative mt-1 mr-4 h-6 w-6 flex-shrink-0">
+        <div className="relative mt-1 mr-4 h-6 w-6 shrink-0">
           <IconPlus
             className={cn(
               "text-primary absolute inset-0 h-6 w-6 transform transition-all duration-200",

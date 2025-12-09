@@ -19,7 +19,7 @@ export function CTA() {
             </div>
 
             {/* 2. Main Heading - Tight tracking, responsive sizing */}
-            <h2 className="max-w-4xl text-center text-4xl leading-[1.1] font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h2 className="max-w-4xl text-center text-5xl leading-[1.1] font-bold tracking-tight text-white lg:text-6xl">
               Ready to Build <br className="hidden md:block" />
               <span className="bg-linear-to-b from-white to-white/60 bg-clip-text text-transparent">
                 Something Great?
