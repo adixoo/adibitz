@@ -2,14 +2,15 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { type ReactNode } from "react";
 
-interface AnimatedButtonProps {
+interface AnimatedButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   className?: string;
 }
 
 export default function AnimatedButton({
   children,
-  className
+  className,
+  ...props
 }: AnimatedButtonProps) {
   return (
     <button
@@ -17,6 +18,7 @@ export default function AnimatedButton({
         "group relative flex cursor-pointer items-center gap-2 overflow-hidden rounded-full px-6 py-3 font-medium transition-colors duration-300 group-hover:text-white",
         className
       )}
+      {...props}
     >
       <span className="absolute top-0 left-0 -z-10 block aspect-square h-full">
         <span className="bg-primary/40 group-hover:bg-primary block h-full w-full rounded-full transition-all duration-700 ease-out group-hover:w-[600%]" />
@@ -30,7 +32,8 @@ export default function AnimatedButton({
 
 export function AnimatedButtonWhite({
   children,
-  className
+  className,
+  ...props
 }: AnimatedButtonProps) {
   return (
     <button
@@ -38,6 +41,7 @@ export function AnimatedButtonWhite({
         "group relative flex cursor-pointer items-center gap-2 overflow-hidden rounded-full px-6 py-3 font-medium",
         className
       )}
+      {...props}
     >
       <span className="absolute top-0 left-0 -z-10 block aspect-square h-full">
         <span className="block h-full w-full rounded-full bg-white/30 transition-all duration-700 ease-out group-hover:w-[600%] group-hover:bg-white" />
