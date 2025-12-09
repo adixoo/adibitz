@@ -24,6 +24,7 @@ export default function Page() {
         }
       } catch (err) {
         // fail silently — keep US pricing
+        console.error("Error fetching geolocation data:", err);
       }
     }
 
@@ -35,8 +36,10 @@ export default function Page() {
   return (
     <main className="pt-30">
       <div className="mb-4 text-center">
-        <h1 className="text-6xl font-bold text-white/90">Pricing</h1>
-        <p className="mx-auto mt-6 max-w-xl text-lg text-white/60">
+        <h1 className="text-6xl font-bold text-white/90 lg:text-7xl">
+          Pricing
+        </h1>
+        <p className="mx-auto mt-6 max-w-xl text-lg text-white/60 md:text-xl">
           Flexible, transparent pricing crafted for every stage — from startup
           to scale-up.
         </p>
@@ -58,9 +61,9 @@ function AdditionalPagePricing({ isIndian }: { isIndian: boolean }) {
     <>
       <div className="mx-auto max-w-4xl">
         <Card className="card-shadow bg-background border-0 p-8 text-center">
-          <h3 className="mb-4 text-2xl font-bold text-white">
+          <h2 className="mb-4 text-2xl font-bold text-white">
             Need Extra Pages?
-          </h3>
+          </h2>
 
           <p className="mb-6 text-white/60">
             Add more pages to any tier for{" "}

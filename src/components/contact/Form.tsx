@@ -103,7 +103,10 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="space-y-6 pt-12 sm:space-y-8"
+    >
       <FieldSet>
         <FieldGroup className="flex flex-col gap-6">
           {/* Name */}

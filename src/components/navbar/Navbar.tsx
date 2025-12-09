@@ -4,6 +4,10 @@ import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 export const navItems = [
   {
+    name: "Home",
+    link: "/"
+  },
+  {
     name: "Pricing",
     link: "/pricing"
   },

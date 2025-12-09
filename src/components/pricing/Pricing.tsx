@@ -110,7 +110,7 @@ const Card = ({
           <div className="mt-6">
             <div className="flex items-end gap-3 text-white">
               <span className="text-2xl font-bold">{plan.currency}</span>
-              <span className="text-3xl font-bold md:text-5xl">
+              <span className="text-4xl font-bold md:text-5xl">
                 {plan.price}
               </span>
             </div>
@@ -178,7 +178,7 @@ const Divider = () => {
       <div className="h-px w-full bg-white dark:bg-neutral-950" />
       <div className="h-px w-full bg-neutral-200 dark:bg-neutral-800" />
       <div className="absolute inset-0 m-auto flex h-5 w-5 items-center justify-center rounded-xl bg-white dark:bg-neutral-800">
-        <IconPlus className="h-3 w-3 [stroke-width:4px] text-black dark:text-neutral-300" />
+        <IconPlus className="h-3 w-3 stroke-[4px] text-black dark:text-neutral-300" />
       </div>
     </div>
   );
