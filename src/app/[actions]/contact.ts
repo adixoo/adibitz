@@ -57,11 +57,6 @@ export async function contactMe(
         <p style="margin: 5px 0;"><strong>Country:</strong> ${countryName}</p>
         <p style="margin: 5px 0;"><strong>Email:</strong> ${payload.email ?? "-"}</p>
         <p style="margin: 5px 0;"><strong>Phone:</strong> ${payload.whatsapp ?? "-"}</p>
-        ${
-          payload.instantProfile
-            ? `<p style="margin: 5px 0;"><strong>Profile URL:</strong> <a href="${payload.instantProfile}" style="color: #1a73e8; text-decoration: none;">${payload.instantProfile}</a></p>`
-            : ""
-        }
         <div style="margin-top: 15px;">
           <p style="margin: 5px 0; font-weight: bold;">Message:</p>
           <p style="margin: 5px 0; line-height: 1.5; color: #555555;">${payload.message}</p>

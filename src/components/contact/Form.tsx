@@ -34,15 +34,7 @@ import {
 } from "@/components/ui/command";
 
 import { cn } from "@/lib/utils";
-import {
-  Check,
-  ChevronsUpDown,
-  Globe,
-  Mail,
-  MessageCircle,
-  Phone,
-  Send
-} from "lucide-react";
+import { Check, ChevronsUpDown, Globe, Mail, Phone, Send } from "lucide-react";
 
 import { country as countries } from "@/constants/countries";
 import { toast } from "sonner";
@@ -59,7 +51,6 @@ export function ContactForm() {
       name: "",
       email: "",
       whatsapp: "",
-      instantProfile: "",
       country: "",
       subject: "",
       message: ""
@@ -117,6 +108,7 @@ export function ContactForm() {
             <Input
               id="name"
               placeholder="Your name"
+              type="text"
               aria-invalid={!!errors.name}
               {...register("name")}
             />
@@ -186,7 +178,7 @@ export function ContactForm() {
                 How can I reach you? <span className="text-destructive">*</span>
               </FieldLabel>
               <FieldDescription className="pt-1">
-                Provide at least one contact method
+                Provide contact method
               </FieldDescription>
             </div>
 
@@ -203,7 +195,9 @@ export function ContactForm() {
 
                 <Input
                   placeholder="you@example.com"
+                  type="emal"
                   aria-invalid={!!errors.email}
+                  required
                   {...register("email")}
                 />
 
@@ -218,14 +212,17 @@ export function ContactForm() {
                 <Input
                   placeholder={selectedCountry?.code || "+1"}
                   aria-invalid={!!errors.whatsapp}
+                  type="tel"
+                  inputMode="numeric"
+                  pattern="[0-9]{10}"
+                  required
                   {...register("whatsapp")}
                 />
                 <FieldError>{errors.whatsapp?.message}</FieldError>
               </Field>
             </FieldGroup>
 
-            {/* Instant Messaging Profile */}
-            <Field data-invalid={!!errors.instantProfile}>
+            {/* <Field data-invalid={!!errors.instantProfile}>
               <FieldLabel>
                 <MessageCircle className="h-4 w-4" /> Instant Messaging Profile
               </FieldLabel>
@@ -235,7 +232,7 @@ export function ContactForm() {
                 {...register("instantProfile")}
               />
               <FieldError>{errors.instantProfile?.message}</FieldError>
-            </Field>
+            </Field> */}
           </FieldSet>
 
           {/* Subject */}
@@ -244,6 +241,7 @@ export function ContactForm() {
             <Input
               id="subject"
               placeholder="What's this about?"
+              type="text"
               {...register("subject")}
             />
             <FieldError>{errors.subject?.message}</FieldError>
@@ -259,6 +257,8 @@ export function ContactForm() {
               rows={5}
               placeholder="Tell me about your project…"
               aria-invalid={!!errors.message}
+              required
+              maxLength={1000}
               {...register("message")}
             />
             <FieldError>{errors.message?.message}</FieldError>
