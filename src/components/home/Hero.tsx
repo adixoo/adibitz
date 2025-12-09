@@ -31,7 +31,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <div className="absolute inset-0 -z-10 h-full w-full opacity-30">
         <div
           className="absolute inset-0 z-0"
@@ -119,12 +119,13 @@ const Hero = () => {
                 className="text-white/50 transition-colors hover:text-white"
               >
                 <social.icon className="h-6 w-6" />
+                <span className="sr-only">{social.label}</span>
               </motion.a>
             ))}
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

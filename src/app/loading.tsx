@@ -1,14 +1,7 @@
 export default function Loading() {
   return (
-    <div
-      className="fixed inset-0 bg-background z-1000 flex items-center justify-center"
-    >
-      <svg
-        className="loader"
-        viewBox="0 0 40 40"
-        height="40"
-        width="40"
-      >
+    <div className="bg-background fixed inset-0 z-1000 flex items-center justify-center">
+      <svg className="loader" viewBox="0 0 40 40" height="40" width="40">
         <circle
           className="track"
           cx="20"

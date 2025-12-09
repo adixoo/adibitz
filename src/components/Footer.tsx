@@ -27,7 +27,7 @@ export function Footer() {
   ];
 
   return (
-    <div className="relative w-full overflow-hidden px-8 py-20">
+    <footer className="relative w-full overflow-hidden px-8 py-20">
       <div className="absolute inset-0 -z-10 h-full w-full opacity-25">
         <div
           className="absolute inset-0 z-0"
@@ -82,7 +82,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 
@@ -127,8 +127,8 @@ const Logo = () => {
       <Image
         src="/logo.png"
         alt="Adibitz logo"
-        width={512}
-        height={512}
+        width={667}
+        height={150}
         className="h-10 w-auto sm:h-16"
       />
       <span className="sr-only">Adibitz</span>

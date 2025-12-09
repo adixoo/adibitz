@@ -14,22 +14,18 @@ const Services = dynamic(() => import("@/components/home/Services"));
 const Testimonials = dynamic(() => import("@/components/home/Testimonial"));
 const Whyme = dynamic(() => import("@/components/home/Whyme"));
 
-
 export default function Home() {
   return (
-    <>
-      {/* Components likely needed for the initial view are statically imported for faster loading */}
+    <main>
       <Hero />
-      <Services /> {/* Often one of the first things a user sees, but we'll dynamic-import it to show the pattern */}
+      <Services />
       <Ribbon />
-      
-      {/* The rest of the page components are lazy-loaded */}
       <About />
       <Whyme />
       <Pricing />
       <Testimonials />
       <FAQ />
       <CTA />
-    </>
+    </main>
   );
 }

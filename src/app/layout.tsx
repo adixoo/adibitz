@@ -83,7 +83,6 @@ export default function RootLayout({
             {/* Your Content/Components */}
           </div>
           <Navbar />
-
           {children}
           <Footer />
         </ReactLenis>

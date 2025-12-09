@@ -8,7 +8,7 @@ export default function LargeHeading<T extends React.ElementType = "h1">({
   children,
   ...props
 }: LargeHeadingProps<T>) {
-  const Component = as || "h1";
+  const Component = as || "div";
 
   return (
     <Component

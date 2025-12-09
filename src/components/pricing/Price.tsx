@@ -111,9 +111,9 @@ const Pricing = () => {
           <Badge variant="secondary" className="mb-4 text-sm font-medium">
             Simple & Transparent Pricing
           </Badge>
-          <h1 className="text-primary mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">
+          <h2 className="text-primary mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">
             Choose Your Perfect Plan
-          </h1>
+          </h2>
           <p className="text-muted-foreground mx-auto max-w-3xl text-lg md:text-xl">
             Clear, feature-based pricing for small business and personal
             websites. Every tier builds on the previous one with enhanced

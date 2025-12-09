@@ -2,7 +2,6 @@
 import Logo from "@/components/Logo";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { BsX } from "react-icons/bs";
 import { IoIosMenu } from "react-icons/io";
@@ -36,11 +35,10 @@ export const MobileNav = ({
     hidden: { x: "-2vw", opacity: 0 },
     show: { x: 0, opacity: 1 }
   };
-  const router = useRouter();
   return (
     <>
       <div className="bg-background/70 flex w-full flex-row items-center justify-between rounded-full px-4 py-2 backdrop-blur-2xl">
-        <Logo textClassName="text-black" />
+        <Logo />
         <IoIosMenu onClick={() => setOpen(!open)} className="size-6" />
       </div>
       <AnimatePresence>

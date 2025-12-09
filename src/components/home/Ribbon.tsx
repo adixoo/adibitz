@@ -11,7 +11,7 @@ const Ribbon = () => {
   ];
 
   return (
-    <div className="bg-primary my-10 flex w-full items-center justify-center py-4">
+    <section className="bg-primary my-10 flex w-full items-center justify-center py-4">
       <Marquee className="[--duration:20s]">
         {items.map((item, index) => (
           <div key={index} className="flex items-center gap-12">
@@ -22,7 +22,7 @@ const Ribbon = () => {
           </div>
         ))}
       </Marquee>
-    </div>
+    </section>
   );
 };
 

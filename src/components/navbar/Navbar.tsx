@@ -23,7 +23,7 @@ export const navItems = [
 
 const Navbar = () => {
   return (
-    <div className="fixed left-1/2 z-50 mx-auto flex w-full -translate-x-1/2 flex-row items-center justify-between px-3 pt-3 sm:justify-center">
+    <header className="fixed left-1/2 z-50 mx-auto flex w-full -translate-x-1/2 flex-row items-center justify-between px-3 pt-3 sm:justify-center">
       <div className="hidden justify-center sm:flex">
         <DesktopNav navItems={navItems} />
       </div>
@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="flex w-full sm:hidden">
         <MobileNav navItems={navItems} />
       </div>
-    </div>
+    </header>
   );
 };
 
