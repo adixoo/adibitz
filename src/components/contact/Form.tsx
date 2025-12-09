@@ -331,7 +331,7 @@ export function ContactForm() {
               </FieldGroup>
             </FieldSet>
 
-            <Button type="submit" disabled={isSubmitting} className="w-full">
+            <Button type="submit" disabled={isSubmitting} className="w-full mt-6">
               {isSubmitting ? (
                 "Sending…"
               ) : (
