@@ -3,7 +3,7 @@ import { Sparkles } from "lucide-react"; // Optional: if you have lucide-react, 
 import Link from "next/link";
 import AnimatedButton from "../ui/animated-button";
 
-export function CTA() {
+export default function CTA() {
   return (
     <section className="px-4 py-12 md:py-20">
       <div className="mx-auto w-full max-w-6xl overflow-hidden rounded-3xl shadow-2xl">

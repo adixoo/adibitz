@@ -37,7 +37,7 @@ const FAQs = [
   }
 ];
 
-export function FAQ() {
+export default function FAQ() {
   const [open, setOpen] = useState<string | null>(null);
   return (
     <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 py-20 md:grid-cols-2 md:px-8 md:py-40">

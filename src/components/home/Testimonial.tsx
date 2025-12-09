@@ -5,7 +5,7 @@ import Marquee from "react-fast-marquee";
 import LargeHeading from "../LargeHeading";
 import { Rating } from "../ui/rating";
 
-export function Testimonials() {
+export default function Testimonials() {
   return (
     <section>
       <LargeHeading>CLIENTS</LargeHeading>
