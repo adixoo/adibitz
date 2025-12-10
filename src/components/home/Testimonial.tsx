@@ -21,7 +21,7 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="w-full space-y-4 pt-10">
+        <div className="w-full space-y-4 pt-4">
           <TestimonialsGrid />
         </div>
       </div>
