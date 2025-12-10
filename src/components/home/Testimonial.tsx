@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
 import React from "react";
-import Marquee from "react-fast-marquee";
 import LargeHeading from "../LargeHeading";
 import { Rating } from "../ui/rating";
 
@@ -15,70 +14,42 @@ export default function Testimonials() {
             What My <span className="text-primary font-bold">Clients</span> Say
           </h2>
           <p className="mx-auto mt-6 max-w-4xl text-white/60 md:text-lg">
-            I’ve had the privilege of working with amazing clients across
-            different industries. Here’s what they have to say about
+            I&apos;ve had the privilege of working with amazing clients across
+            different industries. Here&apos;s what they have to say about
             collaborating with me—delivering fast, modern, and effective
             websites that exceed expectations.
           </p>
         </div>
 
-        <div className="relative">
-          <div className="bg-charcoal h-full w-full overflow-hidden">
-            <TestimonialsGrid />
-          </div>
+        <div className="w-full space-y-4 pt-10">
+          <TestimonialsGrid />
         </div>
-
-        <div className="from-charcoal absolute inset-x-0 bottom-0 h-40 w-full bg-linear-to-t to-transparent"></div>
       </div>
     </section>
   );
 }
 
-export const TestimonialsGrid = () => {
-  const first = testimonials.slice(0, 6);
-  const second = testimonials.slice(6, 12);
+const TestimonialsGrid = () => {
   return (
-    <div className="relative mask-[linear-gradient(to_right,transparent_0%,white_10%,white_90%,transparent_100%)]">
-      <Marquee direction="left" pauseOnHover speed={50}>
-        {first.map((testimonial, index) => (
-          <Card key={`testimonial-${index}`}>
-            <Rating rating={testimonial.rating} />
+    <>
+      {testimonials.map((testimonial, index) => (
+        <Card key={`testimonial-${index}`} className="w-full">
+          <Rating rating={testimonial.rating} />
 
-            <Quote>{testimonial.quote}</Quote>
-            <div className="mt-6 flex items-center gap-2">
-              <div className="flex flex-col">
-                <QuoteDescription className="text-neutral-300">
-                  {testimonial.name}
-                </QuoteDescription>
-                <QuoteDescription className="">
-                  {testimonial.designation}
-                </QuoteDescription>
-              </div>
+          <Quote>{testimonial.quote}</Quote>
+          <div className="mt-6 flex items-center gap-2">
+            <div className="flex flex-col">
+              <QuoteDescription className="text-neutral-300">
+                {testimonial.name}
+              </QuoteDescription>
+              <QuoteDescription className="">
+                {testimonial.designation}
+              </QuoteDescription>
             </div>
-          </Card>
-        ))}
-      </Marquee>
-
-      <Marquee className="mt-10" direction="left" pauseOnHover speed={70}>
-        {second.map((testimonial, index) => (
-          <Card key={`testimonial-${index}`}>
-            <Rating rating={testimonial.rating} />
-
-            <Quote>{testimonial.quote}</Quote>
-            <div className="mt-6 flex items-center gap-2">
-              <div className="flex flex-col">
-                <QuoteDescription className="text-neutral-300">
-                  {testimonial.name}
-                </QuoteDescription>
-                <QuoteDescription className="">
-                  {testimonial.designation}
-                </QuoteDescription>
-              </div>
-            </div>
-          </Card>
-        ))}
-      </Marquee>
-    </div>
+          </div>
+        </Card>
+      ))}
+    </>
   );
 };
 
@@ -92,7 +63,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "group bg-background mx-4 h-full min-h-[230px] max-w-md rounded-xl p-4 shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] md:max-w-lg md:p-8",
+        "group bg-background mx-auto h-full min-h-[230px] max-w-4xl rounded-xl p-6 shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] md:p-8",
         className
       )}
     >
@@ -111,7 +82,7 @@ export const Quote = ({
   return (
     <p
       className={cn(
-        "mt-2 py-2 font-normal tracking-wide text-white md:text-lg",
+        "mt-2 py-2 leading-relaxed font-light tracking-wide text-neutral-200 max-md:text-lg md:text-xl",
         className
       )}
     >
@@ -130,7 +101,7 @@ export const QuoteDescription = ({
   return (
     <p
       className={cn(
-        "max-w-sm text-xs font-normal text-neutral-500 md:text-sm",
+        "max-w-sm text-sm font-medium text-neutral-500 md:text-base",
         className
       )}
     >
@@ -148,87 +119,24 @@ interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Manu Arora",
+    name: "Grisha Sanghavi",
     quote:
-      "What a fantastic AI Proactiv AI is, I just love it. It has completely transformed the way I approach problems and develop solutions.",
-    designation: "Tech Innovator & Entrepreneur",
+      "We've had the pleasure of working with Aadi for over a year, and we're thoroughly impressed with his web design and development skills. Aadi is not only talented but also a fantastic communicator. He's transparent about his process, and we've always felt confident in his abilities. We love working with him and look forward to collaborating on future projects. Highly recommended!",
+    designation: "Founder of TheSocialBling",
     rating: 5
   },
   {
-    name: "Tyler Durden",
+    name: "Harshit Tiwari",
     quote:
-      "I made a soap with the help of AI, it was so easy to use. It revolutionized my entire business model and production process.",
-    designation: "Creative Director & Business Owner",
-    rating: 4
-  },
-  {
-    name: "Alice Johnson",
-    quote:
-      "This AI has transformed the way I work! It's like having a brilliant assistant who knows exactly what I need.",
-    designation: "Senior Software Engineer",
+      "We've partnered with Aadi for over a year and have consistently been impressed by the quality of his web design and development work. His technical expertise is matched by his professionalism and clear communication. Aadi is transparent throughout the entire process, delivers reliably, and always ensures we feel confident in the project's direction. Working with him has been a pleasure, and we look forward to continuing our collaboration. Highly recommended.",
+    designation: "Founder of Apexnexuss",
     rating: 5
   },
   {
-    name: "Bob Smith",
+    name: "Deepti Ranjan",
     quote:
-      "Absolutely revolutionary and a game-changer for our industry. Productivity has skyrocketed.",
-    designation: "Industry Analyst",
+      "Working with Aditya was one of the smoothest experiences I've had. He understood exactly what I wanted for my website and turned it into something even better than I imagined. His communication was clear, his ideas were sharp, and his execution was spot-on. Aditya doesn't just build websites, he brings your vision to life. I'm genuinely impressed and would recommend him to anyone looking for a talented and reliable developer.",
+    designation: "Founder of Voxizo Media",
     rating: 5
-  },
-  {
-    name: "Cathy Lee",
-    quote:
-      "I can't imagine going back to how things were before this AI. It improved both work and daily life.",
-    designation: "Product Manager",
-    rating: 4
-  },
-  {
-    name: "David Wright",
-    quote:
-      "It's like having a superpower! This tool enables things we once thought impossible.",
-    designation: "Research Scientist",
-    rating: 5
-  },
-  {
-    name: "Eva Green",
-    quote:
-      "The efficiency it brings is unmatched. A vital tool for improving our end product.",
-    designation: "Operations Director",
-    rating: 4
-  },
-  {
-    name: "Frank Moore",
-    quote:
-      "A robust solution that fits perfectly into our workflow. Enhances team capabilities greatly.",
-    designation: "Project Manager",
-    rating: 5
-  },
-  {
-    name: "Grace Hall",
-    quote:
-      "Incredibly intuitive. Even non-technical team members benefit from it.",
-    designation: "Marketing Specialist",
-    rating: 4
-  },
-  {
-    name: "Henry Ford",
-    quote:
-      "Saved us countless hours. Highly recommended for efficiency boosts.",
-    designation: "Operations Analyst",
-    rating: 5
-  },
-  {
-    name: "Ivy Wilson",
-    quote:
-      "A must-have for any modern professional. It has changed the way we solve problems.",
-    designation: "Business Consultant",
-    rating: 5
-  },
-  {
-    name: "Jack Brown",
-    quote:
-      "The results are always impressive. Helps us meet and exceed performance targets.",
-    designation: "Performance Manager",
-    rating: 4
   }
 ];

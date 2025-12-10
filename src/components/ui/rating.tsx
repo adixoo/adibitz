@@ -27,7 +27,7 @@ const starVariants = cva("", {
     }
   },
   defaultVariants: {
-    size: "sm"
+    size: "md"
   }
 });
 
