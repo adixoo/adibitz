@@ -52,7 +52,7 @@ export const indianPricing = {
 export const foreignPricing = {
   starter: {
     name: "Starter Website",
-    price: "50 – 80",
+    price: "70 - 100",
     currency: "$",
     features: [
       "One-page layout (Home)",
@@ -69,7 +69,7 @@ export const foreignPricing = {
 
   advanced: {
     name: "Advanced Website",
-    price: "120 – 160",
+    price: "150 - 220",
     currency: "$",
     features: [
       "Refined responsive design",
@@ -80,12 +80,12 @@ export const foreignPricing = {
       "Optional dark mode",
       "Consistent design system"
     ],
-    additionalFeatures: ["Everything in Standard Website"]
+    additionalFeatures: ["Everything in Starter Website"]
   },
 
   premium: {
     name: "Premium Website",
-    price: "160 – 200",
+    price: "230 - 320",
     currency: "$",
     features: [
       "High-quality landing page",
