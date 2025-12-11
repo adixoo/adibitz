@@ -98,7 +98,9 @@ const Card = ({ plan }: { plan: PricingItem; onClick?: () => void }) => {
       <div className="flex h-full flex-col justify-start gap-4">
         <div className={cn("shadow-input w-full rounded-2xl bg-white/7 p-4")}>
           <div className="flex items-start justify-between">
-            <p className="text-lg font-medium text-white/70">{plan.name}</p>
+            <p className="text-base font-medium text-white/70 md:text-lg">
+              {plan.name}
+            </p>
 
             {plan.featured && (
               <div className="bg-primary rounded-full px-3 py-1 text-xs font-medium text-white">
@@ -112,7 +114,7 @@ const Card = ({ plan }: { plan: PricingItem; onClick?: () => void }) => {
               <span className="text-xl font-bold md:text-2xl">
                 {plan.currency}
               </span>
-              <span className="text-2xl font-bold md:text-4xl">
+              <span className="text-3xl font-bold md:text-4xl">
                 {plan.price}
               </span>
             </div>
@@ -167,7 +169,7 @@ const Step = ({
         <IconCheck className="h-3 w-3 stroke-[4px] text-white/80" />
       </div>
 
-      <div className="text-sm font-medium text-black dark:text-white">
+      <div className="text-sm font-normal text-black dark:text-white">
         {children}
       </div>
     </div>

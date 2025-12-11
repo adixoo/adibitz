@@ -22,15 +22,17 @@ export default function Home() {
       <Ribbon />
       <About />
       <Whyme />
-      <section className="w-full px-6 py-20 text-center md:px-20">
-        <h2 className="text-5xl text-white/80">Pricing</h2>
+      <section className="w-full py-20 text-center">
+        <div className="px-4">
+          <h2 className="text-5xl text-white/80">Pricing</h2>
 
-        <p className="mx-auto mt-6 max-w-4xl leading-relaxed text-white/60 md:text-lg">
-          I focus on delivering clean, high-quality work with a process that’s
-          simple, transparent, and built around what your business truly needs.
-          Here’s what makes my services the right fit for modern brands and
-          startups.
-        </p>
+          <p className="mx-auto mt-6 max-w-4xl leading-relaxed text-white/60 md:text-lg">
+            I focus on delivering clean, high-quality work with a process that’s
+            simple, transparent, and built around what your business truly
+            needs. Here’s what makes my services the right fit for modern brands
+            and startups.
+          </p>
+        </div>
         <Pricing />
       </section>
       <Testimonials />
