@@ -1,8 +1,8 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { IconCheck, IconPlus } from "@tabler/icons-react";
-import React from "react";
-import { Button } from "../ui/button";
+import React, { useEffect, useState } from "react";
+import { foreignPricing, indianPricing } from "./pricingData";
 
 export type PricingItem = {
   id: string;
@@ -26,18 +26,36 @@ export type PricingData = Record<
   }
 >;
 
-export default function PricingGrid({
-  title,
-  subtitle,
-  data,
+export default function Pricing({
   onSelect
 }: {
   title?: string;
   subtitle?: string;
-  data: PricingData;
   onSelect?: (id: string) => void;
 }) {
-  const plans: PricingItem[] = Object.entries(data).map(([key, val]) => ({
+  const [isIndian, setIsIndian] = useState(false); // default → US
+
+  useEffect(() => {
+    async function fetchCountry() {
+      try {
+        const res = await fetch("https://ipwho.is/");
+        const data = await res.json();
+
+        if (data.country_code === "IN") {
+          setIsIndian(true);
+        }
+      } catch (err) {
+        // fail silently — keep US pricing
+        console.error("Error fetching geolocation data:", err);
+      }
+    }
+
+    fetchCountry();
+  }, []);
+
+  const pricing = (isIndian ? indianPricing : foreignPricing) as PricingData;
+
+  const plans: PricingItem[] = Object.entries(pricing).map(([key, val]) => ({
     id: key,
     name: val.name,
     price: val.price,
@@ -48,24 +66,12 @@ export default function PricingGrid({
   }));
 
   return (
-    <div className="relative isolate mx-auto max-w-5xl bg-transparent px-4 py-8 sm:py-12 lg:px-4">
-      {title && (
-        <h2 className="pt-2 text-center text-lg font-bold text-neutral-800 md:text-4xl dark:text-neutral-100">
-          {title}
-        </h2>
-      )}
-
-      {subtitle && (
-        <p className="mx-auto mt-3 max-w-md text-center text-base text-neutral-600 dark:text-neutral-300">
-          {subtitle}
-        </p>
-      )}
-
+    <div className="relative isolate mx-auto max-w-7xl bg-transparent px-4 py-8 sm:py-12 lg:px-4">
       <div
         className={cn(
-          "mx-auto mt-10 grid grid-cols-1 gap-6",
+          "mx-auto mt-10 grid grid-cols-1 gap-4",
           // 2x2 grid on medium and above
-          "md:grid-cols-2 lg:grid-cols-2"
+          "md:grid-cols-1 lg:grid-cols-3"
         )}
       >
         {plans.map((plan) => (
@@ -82,13 +88,7 @@ export default function PricingGrid({
   );
 }
 
-const Card = ({
-  plan,
-  onClick
-}: {
-  plan: PricingItem;
-  onClick?: () => void;
-}) => {
+const Card = ({ plan }: { plan: PricingItem; onClick?: () => void }) => {
   return (
     <div
       className={cn(
@@ -101,7 +101,7 @@ const Card = ({
             <p className="text-lg font-medium text-white/70">{plan.name}</p>
 
             {plan.featured && (
-              <div className="rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium text-white dark:bg-white dark:text-black">
+              <div className="bg-primary rounded-full px-3 py-1 text-xs font-medium text-white">
                 Featured
               </div>
             )}
@@ -109,20 +109,22 @@ const Card = ({
 
           <div className="mt-6">
             <div className="flex items-end gap-3 text-white">
-              <span className="text-2xl font-bold">{plan.currency}</span>
-              <span className="text-4xl font-bold md:text-5xl">
+              <span className="text-xl font-bold md:text-2xl">
+                {plan.currency}
+              </span>
+              <span className="text-2xl font-bold md:text-4xl">
                 {plan.price}
               </span>
             </div>
           </div>
 
-          <Button
+          {/* <Button
             type="button"
             className="mt-8 mb-2 w-full rounded-full px-3 py-2 font-medium text-white"
             onClick={onClick}
           >
             Get Started
-          </Button>
+          </Button> */}
         </div>
 
         <div className="mt-1 p-4">

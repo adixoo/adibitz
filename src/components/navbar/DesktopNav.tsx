@@ -9,7 +9,7 @@ export const DesktopNav = ({
   navItems: { name: string; link: string }[];
 }) => {
   return (
-    <div className="bg-background/70 flex flex-row items-center space-x-10 rounded-full border py-2 pr-2 pl-4 antialiased backdrop-blur-2xl">
+    <div className="bg-background/70 flex flex-row items-center space-x-6 rounded-full border py-2 pr-2 pl-4 antialiased backdrop-blur-2xl">
       <Logo />
       {navItems.map((navItem: { name: string; link: string }, idx: number) => (
         <Link

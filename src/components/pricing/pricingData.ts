@@ -1,7 +1,7 @@
 export const indianPricing = {
   starter: {
     name: "Starter Website",
-    price: "1,000 – 1,500",
+    price: "1,000 - 1,500",
     currency: "₹",
     features: [
       "1 to 2 pages",
@@ -9,62 +9,42 @@ export const indianPricing = {
       "Static content (no backend)",
       "Basic mobile responsiveness",
       "Minimal animations",
-      "Simple navbar + footer",
       "Basic color styling",
-      "Placeholder images",
-      "WhatsApp / Email contact button",
       "Fast, lightweight UI",
       "Basic SEO (title + meta description)",
       "Basic on page SEO"
     ]
   },
 
-  standard: {
-    name: "Standard Website",
-    price: "2,000 – 3,000",
-    currency: "₹",
-    features: [
-      "3 to 4 pages",
-      "Better page layouts",
-      "Improved responsiveness",
-      "Fade/slide animations",
-      "Contact form (non-functional)",
-      "Google Maps embed"
-    ],
-    additionalFeatures: ["Everything in Starter Website"]
-  },
-
   advanced: {
     name: "Advanced Website",
-    price: "3,000 – 4,000",
+    price: "3,000 - 4,000",
     currency: "₹",
     featured: true,
     features: [
+      "3 to 4 pages",
       "Framer Motion animations",
       "Fully responsive",
       "Improved typography & spacing",
       "Icons + micro-interactions",
       "Back-to-top button",
       "Optional dark/light mode",
-      "Fully working contact form"
+      "Fully working forms"
     ],
     additionalFeatures: ["Everything in Standard Website"]
   },
 
   premium: {
     name: "Premium Website",
-    price: "4,000 – 5,000",
+    price: "5,000 +",
     currency: "₹",
     features: [
-      "5 pages max",
+      "Up to 5 pages",
       "Full landing page",
       "Advanced Framer Motion animations",
       "Modern UI components",
-      "Fully working contact form",
       "SEO-friendly structure",
-      "OG + Twitter tags",
-      "Reusable component structure",
-      "Dark mode toggle"
+      "OG + Twitter tags"
     ],
     additionalFeatures: ["Everything in Advanced Website"]
   }
@@ -85,23 +65,6 @@ export const foreignPricing = {
       "Social / WhatsApp / Email buttons",
       "Basic SEO (title + meta description)"
     ]
-  },
-
-  standard: {
-    name: "Standard Website",
-    price: "80 – 120",
-    currency: "$",
-    featured: true,
-    features: [
-      "2–4 pages website",
-      "Improved page structure",
-      "Fully responsive",
-      "Fade/slide animations",
-      "Contact form (FormSubmit)",
-      "Google Maps embed",
-      "Better spacing & structure"
-    ],
-    additionalFeatures: ["Everything in Starter Website"]
   },
 
   advanced: {
